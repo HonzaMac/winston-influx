@@ -1,0 +1,32 @@
+pipeline {
+    agent {
+        docker {
+            image 'scriptinator/buildagent-node:11'
+        }
+    }
+    options {
+        disableConcurrentBuilds()
+    }
+    environment {
+        SONAR_LOGIN = credentials('9bc1b261-b124-4c41-9b93-e8be7d0879b2')
+    }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'npm install'
+                sh 'npm run test || true'
+                junit testResults: 'test-results.xml'
+            }
+            post {
+                always {
+                    sh 'rm -rf test-results.xml'
+                }
+            }
+        }
+        stage('Analyze') {
+            steps {
+                sonar()
+            }
+        }
+    }
+}

@@ -1,0 +1,1125 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/Batcher.js",
+    "content": "const {EventEmitter} = require('events');\n\n/**\n * @typedef {Object} IBatcherOptions\n * @property {Number} [interval=10] The flush interval in seconds. If you set this value then the batch will be flushed\n *      on a regular interval\n * @property {Number} [batchSize=5000] The maximum batch size. If the batch has reached this size it will be flushed.\n *      If you have set an 'interval' and this interval has not yet been reached, the batch is flushed anyway.\n */\n\n/**\n * Batcher provides a way to batch a lot of inputs into groups. It has two mechanisms to do this.\n * The first mechanism is to set the 'batchSize' option to the maximum desired size of a single batch. When the buffer\n * has reached this size it will flush the batch.\n * The second option is to set the 'interval' option. If this option is set the batch will be flushed when either\n * maximum batch size is reached or the interval has passed.\n * @type {module.Batcher}\n * @example\n * const {Batcher} = require('@scriptinator/winston-influx');\n *\n * let batch = new Batcher({interval: 10});\n *\n * batch.on('flush', function(data) {\n *   console.log('Here is a large array of data!');\n *   console.log(data);\n * });\n *\n * for(let i = 0; i < 5000; i++) {\n *   batch.write(i);\n * }\n */\nmodule.exports = class Batcher extends EventEmitter {\n    /**\n     * Create a new Batcher and, if the 'interval' option is supplied, start the interval timer.\n     * @param {IBatcherOptions} [options={batchSize: 5000, interval: 0}]\n     */\n    constructor(options = {}) {\n        super();\n        /**\n         * @type {IBatcherOptions}\n         * @private\n         */\n        this._options = {batchSize: 5000, interval: 0, ...options};\n\n        if (options.interval) {\n            /**\n             * If the interval options is set, this contains a reference for the set interval\n             * @type {number}\n             * @private\n             */\n            this._interval = setInterval(() => this.flush(), options.interval);\n        }\n        /**\n         * @type {Array}\n         * @private\n         */\n        this._batch = [];\n    }\n\n    /**\n     * Write an item to the batch.\n     * @param {*} item\n     */\n    write(item) {\n        this._batch.push(item);\n        this.emit('write', item);\n        if (this._batch.length >= this._options.batchSize) {\n            this.flush();\n        }\n    }\n\n    /**\n     * Flush the current batch. If the batch is empty, this method does nothing.\n     */\n    flush() {\n        if (this._batch.length > 0) {\n            this.emit('flush', this._batch);\n            this._batch = [];\n        }\n    }\n\n    /**\n     * Stop the interval timer.\n     */\n    close() {\n        if (this._interval) {\n            clearInterval(this._interval);\n        }\n    }\n};\n",
+    "static": true,
+    "longname": "/home/chappio/src/github.com/scriptinatorio/winston-influx/src/Batcher.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "typedef",
+    "name": "IBatcherOptions",
+    "memberof": "src/Batcher.js",
+    "static": true,
+    "longname": "src/Batcher.js~IBatcherOptions",
+    "access": "public",
+    "description": "",
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "10",
+        "defaultRaw": 10,
+        "name": "interval",
+        "description": "The flush interval in seconds. If you set this value then the batch will be flushed\n     on a regular interval"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Number"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "5000",
+        "defaultRaw": 5000,
+        "name": "batchSize",
+        "description": "The maximum batch size. If the batch has reached this size it will be flushed.\n     If you have set an 'interval' and this interval has not yet been reached, the batch is flushed anyway."
+      }
+    ],
+    "type": {
+      "types": [
+        "Object"
+      ],
+      "optional": false,
+      "name": "IBatcherOptions"
+    }
+  },
+  {
+    "__docId__": 50,
+    "kind": "class",
+    "name": "Batcher",
+    "memberof": "src/Batcher.js",
+    "static": true,
+    "longname": "src/Batcher.js~Batcher",
+    "access": "public",
+    "export": true,
+    "importPath": "@scriptinator/winston-influx/src/Batcher.js",
+    "importStyle": "Batcher",
+    "description": "Batcher provides a way to batch a lot of inputs into groups. It has two mechanisms to do this.\nThe first mechanism is to set the 'batchSize' option to the maximum desired size of a single batch. When the buffer\nhas reached this size it will flush the batch.\nThe second option is to set the 'interval' option. If this option is set the batch will be flushed when either\nmaximum batch size is reached or the interval has passed.",
+    "examples": [
+      "const {Batcher} = require('@scriptinator/winston-influx');\n\nlet batch = new Batcher({interval: 10});\n\nbatch.on('flush', function(data) {\n  console.log('Here is a large array of data!');\n  console.log(data);\n});\n\nfor(let i = 0; i < 5000; i++) {\n  batch.write(i);\n}"
+    ],
+    "lineNumber": 32,
+    "type": {
+      "nullable": null,
+      "types": [
+        "module.Batcher"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "interface": false,
+    "extends": [
+      "events~EventEmitter"
+    ]
+  },
+  {
+    "__docId__": 51,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/Batcher.js~Batcher",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Batcher.js~Batcher#constructor",
+    "access": "public",
+    "description": "Create a new Batcher and, if the 'interval' option is supplied, start the interval timer.",
+    "lineNumber": 37,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "IBatcherOptions"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "{batchSize: 5000, interval: 0}",
+        "defaultRaw": "{batchSize: 5000, interval: 0}",
+        "name": "options",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "__docId__": 52,
+    "kind": "member",
+    "name": "_options",
+    "memberof": "src/Batcher.js~Batcher",
+    "static": false,
+    "longname": "src/Batcher.js~Batcher#_options",
+    "access": "private",
+    "description": "",
+    "lineNumber": 43,
+    "type": {
+      "nullable": null,
+      "types": [
+        "IBatcherOptions"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 53,
+    "kind": "member",
+    "name": "_interval",
+    "memberof": "src/Batcher.js~Batcher",
+    "static": false,
+    "longname": "src/Batcher.js~Batcher#_interval",
+    "access": "private",
+    "description": "If the interval options is set, this contains a reference for the set interval",
+    "lineNumber": 51,
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 54,
+    "kind": "member",
+    "name": "_batch",
+    "memberof": "src/Batcher.js~Batcher",
+    "static": false,
+    "longname": "src/Batcher.js~Batcher#_batch",
+    "access": "private",
+    "description": "",
+    "lineNumber": 57,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Array"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 55,
+    "kind": "method",
+    "name": "write",
+    "memberof": "src/Batcher.js~Batcher",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Batcher.js~Batcher#write",
+    "access": "public",
+    "description": "Write an item to the batch.",
+    "lineNumber": 64,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "item",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 56,
+    "kind": "method",
+    "name": "flush",
+    "memberof": "src/Batcher.js~Batcher",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Batcher.js~Batcher#flush",
+    "access": "public",
+    "description": "Flush the current batch. If the batch is empty, this method does nothing.",
+    "lineNumber": 75,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 58,
+    "kind": "method",
+    "name": "close",
+    "memberof": "src/Batcher.js~Batcher",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Batcher.js~Batcher#close",
+    "access": "public",
+    "description": "Stop the interval timer.",
+    "lineNumber": 85,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 59,
+    "kind": "file",
+    "name": "src/InfluxTransport.js",
+    "content": "const {writePoint} = require('./global');\nconst Transport = require('winston-transport');\n\nmodule.exports = class InfluxTransport extends Transport {\n    constructor(writer) {\n        super();\n        this._writeFn = writer ? writer.writePoint.bind(writer) : writePoint;\n    }\n\n    log(info, callback) {\n        setImmediate(() => {\n            this.emit('logged', info);\n        });\n\n        this._writeFn(\n            'log',\n            {\n                level: info.level\n            },\n            {\n                message: info.message,\n            }\n        );\n\n        callback();\n    }\n};\n",
+    "static": true,
+    "longname": "/home/chappio/src/github.com/scriptinatorio/winston-influx/src/InfluxTransport.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 60,
+    "kind": "class",
+    "name": "InfluxTransport",
+    "memberof": "src/InfluxTransport.js",
+    "static": true,
+    "longname": "src/InfluxTransport.js~InfluxTransport",
+    "access": "public",
+    "export": true,
+    "importPath": "@scriptinator/winston-influx/src/InfluxTransport.js",
+    "importStyle": "InfluxTransport",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "interface": false,
+    "extends": [
+      "winston-transport~Transport"
+    ]
+  },
+  {
+    "__docId__": 61,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/InfluxTransport.js~InfluxTransport",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/InfluxTransport.js~InfluxTransport#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true
+  },
+  {
+    "__docId__": 62,
+    "kind": "member",
+    "name": "_writeFn",
+    "memberof": "src/InfluxTransport.js~InfluxTransport",
+    "static": false,
+    "longname": "src/InfluxTransport.js~InfluxTransport#_writeFn",
+    "access": "private",
+    "description": null,
+    "lineNumber": 7,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 63,
+    "kind": "method",
+    "name": "log",
+    "memberof": "src/InfluxTransport.js~InfluxTransport",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/InfluxTransport.js~InfluxTransport#log",
+    "access": "public",
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "params": [
+      {
+        "name": "info",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "callback",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 64,
+    "kind": "file",
+    "name": "src/InfluxWriter.js",
+    "content": "const Batcher = require('./Batcher.js');\nconst {InfluxDB, toNanoDate, Precision} = require('influx');\nconst os = require('os');\n\n/**\n * InfluxWriter batches points and writes them to influxdb.\n * @type {module.InfluxWriter}\n */\nmodule.exports = class InfluxWriter {\n    /**\n     *\n     * @param options\n     */\n    constructor(options = {}) {\n        /**\n         * @type {InfluxDB}\n         */\n        this._influx = new InfluxDB(options);\n        /**\n         * @type {module.Batcher}\n         * @private\n         */\n        this._batcher = new Batcher(options);\n        this._batcher.on('flush', batch => this._flushBatch(batch));\n        /**\n         * Influx will overwrite points using the same timestamp and tags.\n         * To work around this we use this _counter field as the nanosecond\n         * segment of the timestamp and increment it every time a point is\n         * written. This way it is extremely unlikely that any points are\n         * overwritten.\n         * @type {number}\n         * @private\n         */\n        this._counter = 0;\n        /**\n         * @type {Object<String, String>}\n         * @private\n         */\n        this._tags = options.tags || {};\n    }\n\n    /**\n     * Add a point to the current batch. If this batch has exceeded the maximum batch\n     * size it will be flushed.\n     *\n     * @param {String} measurement The Influx measurement name.\n     * @param {Object.<String, String>} tags The list of tag values to insert.\n     * @param {Object.<String, *>} fields The list of field values to insert.\n     * @param {Date} [time=new Date()] The time for the measurement.\n     */\n    writePoint(measurement, tags, fields, time = new Date()) {\n        this._counter = this._counter + 1 % 1000;\n\n        this._batcher.write({\n            measurement: measurement,\n            tags: {hostname: os.hostname(), ...this._tags, ...tags},\n            fields: fields,\n            timestamp: toNanoDate(\n                time.getTime() + '000' + this._counter.toString().padStart(3, '0')\n            )\n        });\n    }\n\n    /**\n     * Flush a batch to InfluxDB. This method is triggered by the 'flush' event from Batcher.\n     * @param batch\n     * @private\n     */\n    _flushBatch(batch) {\n        this._influx.writePoints(batch, {precision: Precision.Nanoseconds})\n            .catch(err => console.error(`Failed to write batch to influx: ${err}`));\n    }\n};\n",
+    "static": true,
+    "longname": "/home/chappio/src/github.com/scriptinatorio/winston-influx/src/InfluxWriter.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 65,
+    "kind": "class",
+    "name": "InfluxWriter",
+    "memberof": "src/InfluxWriter.js",
+    "static": true,
+    "longname": "src/InfluxWriter.js~InfluxWriter",
+    "access": "public",
+    "export": true,
+    "importPath": "@scriptinator/winston-influx/src/InfluxWriter.js",
+    "importStyle": "InfluxWriter",
+    "description": "InfluxWriter batches points and writes them to influxdb.",
+    "lineNumber": 9,
+    "type": {
+      "nullable": null,
+      "types": [
+        "module.InfluxWriter"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "interface": false
+  },
+  {
+    "__docId__": 66,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/InfluxWriter.js~InfluxWriter",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/InfluxWriter.js~InfluxWriter#constructor",
+    "access": "public",
+    "description": "",
+    "lineNumber": 14,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "__docId__": 67,
+    "kind": "member",
+    "name": "_influx",
+    "memberof": "src/InfluxWriter.js~InfluxWriter",
+    "static": false,
+    "longname": "src/InfluxWriter.js~InfluxWriter#_influx",
+    "access": "private",
+    "description": "",
+    "lineNumber": 18,
+    "type": {
+      "nullable": null,
+      "types": [
+        "InfluxDB"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 68,
+    "kind": "member",
+    "name": "_batcher",
+    "memberof": "src/InfluxWriter.js~InfluxWriter",
+    "static": false,
+    "longname": "src/InfluxWriter.js~InfluxWriter#_batcher",
+    "access": "private",
+    "description": "",
+    "lineNumber": 23,
+    "type": {
+      "nullable": null,
+      "types": [
+        "module.Batcher"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 69,
+    "kind": "member",
+    "name": "_counter",
+    "memberof": "src/InfluxWriter.js~InfluxWriter",
+    "static": false,
+    "longname": "src/InfluxWriter.js~InfluxWriter#_counter",
+    "access": "private",
+    "description": "Influx will overwrite points using the same timestamp and tags.\nTo work around this we use this _counter field as the nanosecond\nsegment of the timestamp and increment it every time a point is\nwritten. This way it is extremely unlikely that any points are\noverwritten.",
+    "lineNumber": 34,
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 70,
+    "kind": "member",
+    "name": "_tags",
+    "memberof": "src/InfluxWriter.js~InfluxWriter",
+    "static": false,
+    "longname": "src/InfluxWriter.js~InfluxWriter#_tags",
+    "access": "private",
+    "description": "",
+    "lineNumber": 39,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object<String, String>"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 71,
+    "kind": "method",
+    "name": "writePoint",
+    "memberof": "src/InfluxWriter.js~InfluxWriter",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/InfluxWriter.js~InfluxWriter#writePoint",
+    "access": "public",
+    "description": "Add a point to the current batch. If this batch has exceeded the maximum batch\nsize it will be flushed.",
+    "lineNumber": 51,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "measurement",
+        "description": "The Influx measurement name."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object.<String, String>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "tags",
+        "description": "The list of tag values to insert."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object.<String, *>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "fields",
+        "description": "The list of field values to insert."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Date"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "new Date()",
+        "defaultRaw": "new Date()",
+        "name": "time",
+        "description": "The time for the measurement."
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 73,
+    "kind": "method",
+    "name": "_flushBatch",
+    "memberof": "src/InfluxWriter.js~InfluxWriter",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/InfluxWriter.js~InfluxWriter#_flushBatch",
+    "access": "private",
+    "description": "Flush a batch to InfluxDB. This method is triggered by the 'flush' event from Batcher.",
+    "lineNumber": 69,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "batch",
+        "description": ""
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 74,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "const {connect, writePoint} = require('./global');\nconst InfluxWriter = require('./InfluxWriter');\nconst Batcher = require('./Batcher');\nconst InfluxTransport = require('./InfluxTransport');\n\nmodule.exports = {\n    InfluxWriter,\n    InfluxTransport,\n    Batcher,\n    connect,\n    writePoint\n};\n",
+    "static": true,
+    "longname": "/home/chappio/src/github.com/scriptinatorio/winston-influx/src/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "kind": "index",
+    "content": "# InfluxDB Transport\n[![Documentation](./docs/badge.svg)](https://scriptinatorio.github.io/winston-influx/)\n\nThis package is used by Scriptinator's services to aggregate logging and other measurements. We use InfluxDB as our\ntime-series database of choice.\n\n## Collecting Metrics\n\nYou can use the global writer to collect your metrics\n```javascript\nconst {connect, writePoint} = require('@scriptinator/winston-influx');\n\n// Connect to the database\nconnect({ \n    host: 'localhost',\n    database: 'my_metrics_database',\n    interval: 10 // Flush every 10 seconds\n});\n\n\n// Write metrics\nwritePoint(\n    // measurement name\n    'request',\n    // tags\n    {\n        method: 'GET',\n        service: 'api-gateway'\n    },\n    // fields\n    {\n        responseTime: 15\n    }\n);\n\n```\n\nOptionally, you can use a local `InfluxWriter` and not expose the connection to the entire application:\n\n```javascript\nconst {InfluxWriter} = require('@scriptinator/winston-influx')\n\nlet writer = new InfluxWriter({ \n  host: 'localhost',\n  database: 'my_metrics_database',\n  interval: 10\n});\n\nwriter.writePoint(\n    'request',\n    {\n        method: 'GET',\n        service: 'api-gateway'\n    },\n    {\n        responseTime: 15\n    }   \n);\n```\n",
+    "longname": "/home/chappio/src/github.com/scriptinatorio/winston-influx/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"@scriptinator/winston-influx\",\n  \"version\": \"1.0.0\",\n  \"description\": \"\",\n  \"main\": \"lib/index.js\",\n  \"scripts\": {\n    \"test\": \"npm run lint && nyc mocha && esdoc\",\n    \"lint\": \"eslint src\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/ScriptinatorIO/winston-influx.git\"\n  },\n  \"author\": \"Scriptinator\",\n  \"license\": \"Apache-2.0\",\n  \"bugs\": {\n    \"url\": \"https://github.com/ScriptinatorIO/winston-influx/issues\"\n  },\n  \"homepage\": \"https://github.com/ScriptinatorIO/winston-influx#readme\",\n  \"dependencies\": {\n    \"influx\": \"^5.0.7\",\n    \"winston-transport\": \"^4.2.0\"\n  },\n  \"devDependencies\": {\n    \"chai\": \"^4.2.0\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n    \"esdoc-node\": \"^1.0.4\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^5.10.0\",\n    \"mocha\": \"^5.2.0\",\n    \"mocha-junit-reporter\": \"^1.18.0\",\n    \"mocha-multi-reporters\": \"^1.1.7\",\n    \"nodemon\": \"^1.18.7\",\n    \"nyc\": \"^13.1.0\"\n  }\n}\n",
+    "longname": "/home/chappio/src/github.com/scriptinatorio/winston-influx/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

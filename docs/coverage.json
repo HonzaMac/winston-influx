@@ -1,0 +1,27 @@
+{
+  "coverage": "80%",
+  "expectCount": 20,
+  "actualCount": 16,
+  "files": {
+    "src/Batcher.js": {
+      "expectCount": 8,
+      "actualCount": 8,
+      "undocumentLines": []
+    },
+    "src/InfluxTransport.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        4,
+        5,
+        7,
+        10
+      ]
+    },
+    "src/InfluxWriter.js": {
+      "expectCount": 8,
+      "actualCount": 8,
+      "undocumentLines": []
+    }
+  }
+}

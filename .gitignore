@@ -1,0 +1,12 @@
+### Jetbrains
+.idea/
+*.iml
+
+### NPM
+node_modules/
+lib/
+
+### Testing
+coverage/
+.nyc_output/
+test-results.xml
