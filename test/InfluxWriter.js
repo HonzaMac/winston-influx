@@ -32,4 +32,11 @@ describe('InfluxWriter', function () {
 
         writer.writePoint('test', {a: 'b'}, {time: 5});
     });
+
+    it('write 1001 requests to influx - we should properly rotate counter', function () {
+        const writer = new InfluxWriter();
+        writer._counter = 1000;
+        writer.writePoint("test", {a: 'b'}, {time: 5});
+        expect(writer._counter).to.equal(1);
+    });
 });

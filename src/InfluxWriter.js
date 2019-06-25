@@ -49,7 +49,7 @@ module.exports = class InfluxWriter {
      * @param {Date} [time=new Date()] The time for the measurement.
      */
     writePoint(measurement, tags, fields, time = new Date()) {
-        this._counter = this._counter + 1 % 1000;
+        this._counter = (this._counter + 1) % 1000;
 
         this._batcher.write({
             measurement: measurement,
