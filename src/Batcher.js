@@ -16,7 +16,7 @@ const {EventEmitter} = require('events');
  * maximum batch size is reached or the interval has passed.
  * @type {module.Batcher}
  * @example
- * const {Batcher} = require('@scriptinator/winston-influx');
+ * const {Batcher} = require('@honzamac/winston-influx');
  *
  * let batch = new Batcher({interval: 10});
  *

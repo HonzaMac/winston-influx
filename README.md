@@ -8,7 +8,7 @@ time-series database of choice.
 
 You can use the global writer to collect your metrics
 ```javascript
-const {connect, writePoint} = require('@scriptinator/winston-influx');
+const {connect, writePoint} = require('@honzamac/winston-influx');
 
 // Connect to the database
 connect({ 
@@ -38,7 +38,7 @@ writePoint(
 Optionally, you can use a local `InfluxWriter` and not expose the connection to the entire application:
 
 ```javascript
-const {InfluxWriter} = require('@scriptinator/winston-influx')
+const {InfluxWriter} = require('@honzamac/winston-influx');
 
 let writer = new InfluxWriter({ 
   host: 'localhost',

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl">
-  <title data-ice="title">Home | @scriptinator/winston-influx</title>
+  <title data-ice="title">Home | @honzamac/winston-influx</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -24,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/ScriptinatorIO/winston-influx"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/honzamac/winston-influx"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -41,7 +41,7 @@
 <p>This package is used by Scriptinator&apos;s services to aggregate logging and other measurements. We use InfluxDB as our
 time-series database of choice.</p>
 <h2 id="collecting-metrics">Collecting Metrics</h2><p>You can use the global writer to collect your metrics</p>
-<pre><code class="lang-javascript"><code class="source-code prettyprint">const {connect, writePoint} = require(&apos;@scriptinator/winston-influx&apos;);
+<pre><code class="lang-javascript"><code class="source-code prettyprint">const {connect, writePoint} = require(&apos;@honzamac/winston-influx&apos;);
 
 // Connect to the database
 connect({ 
@@ -68,7 +68,7 @@ writePoint(
 </code>
 </code></pre>
 <p>Optionally, you can use a local <code>InfluxWriter</code> and not expose the connection to the entire application:</p>
-<pre><code class="lang-javascript"><code class="source-code prettyprint">const {InfluxWriter} = require(&apos;@scriptinator/winston-influx&apos;)
+<pre><code class="lang-javascript"><code class="source-code prettyprint">const {InfluxWriter} = require(&apos;@honzamac/winston-influx&apos;);
 
 let writer = new InfluxWriter({ 
   host: &apos;localhost&apos;,

@@ -1,5 +1,5 @@
 {
-  "name": "@scriptinator/winston-influx",
+  "name": "@honzamac/winston-influx",
   "version": "1.0.2",
   "description": "",
   "main": "src/index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ScriptinatorIO/winston-influx.git"
+    "url": "git+https://github.com/honzamac/winston-influx.git"
   },
-  "author": "Scriptinator",
+  "author": "HonzaMac,Scriptinator",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/ScriptinatorIO/winston-influx/issues"
+    "url": "https://github.com/honzamac/winston-influx/issues"
   },
-  "homepage": "https://github.com/ScriptinatorIO/winston-influx#readme",
+  "homepage": "https://github.com/honzamac/winston-influx#readme",
   "dependencies": {
     "influx": "^5.0.7",
     "winston-transport": "^4.2.0"

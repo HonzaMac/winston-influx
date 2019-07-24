@@ -1,20 +1,20 @@
 window.esdocSearchIndex = [
   [
-    "@scriptinator/winston-influx/src/batcher.js~batcher",
+    "@honzamac/winston-influx/src/batcher.js~batcher",
     "class/src/Batcher.js~Batcher.html",
-    "<span>Batcher</span> <span class=\"search-result-import-path\">@scriptinator/winston-influx/src/Batcher.js</span>",
+    "<span>Batcher</span> <span class=\"search-result-import-path\">@honzamac/winston-influx/src/Batcher.js</span>",
     "class"
   ],
   [
-    "@scriptinator/winston-influx/src/influxtransport.js~influxtransport",
+    "@honzamac/winston-influx/src/influxtransport.js~influxtransport",
     "class/src/InfluxTransport.js~InfluxTransport.html",
-    "<span>InfluxTransport</span> <span class=\"search-result-import-path\">@scriptinator/winston-influx/src/InfluxTransport.js</span>",
+    "<span>InfluxTransport</span> <span class=\"search-result-import-path\">@honzamac/winston-influx/src/InfluxTransport.js</span>",
     "class"
   ],
   [
-    "@scriptinator/winston-influx/src/influxwriter.js~influxwriter",
+    "@honzamac/winston-influx/src/influxwriter.js~influxwriter",
     "class/src/InfluxWriter.js~InfluxWriter.html",
-    "<span>InfluxWriter</span> <span class=\"search-result-import-path\">@scriptinator/winston-influx/src/InfluxWriter.js</span>",
+    "<span>InfluxWriter</span> <span class=\"search-result-import-path\">@honzamac/winston-influx/src/InfluxWriter.js</span>",
     "class"
   ],
   [
