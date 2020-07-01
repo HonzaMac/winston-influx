@@ -16,6 +16,9 @@
   "bugs": {
     "url": "https://github.com/honzamac/winston-influx/issues"
   },
+  "engines": {
+    "node": ">=10"
+  },
   "homepage": "https://github.com/honzamac/winston-influx#readme",
   "dependencies": {
     "influx": "^5.5.2",
