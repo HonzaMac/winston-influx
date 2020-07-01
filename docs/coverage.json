@@ -1,27 +1,39 @@
 {
-  "coverage": "80%",
-  "expectCount": 20,
+  "coverage": "66.66%",
+  "expectCount": 24,
   "actualCount": 16,
   "files": {
     "src/Batcher.js": {
-      "expectCount": 8,
+      "expectCount": 9,
       "actualCount": 8,
-      "undocumentLines": []
+      "undocumentLines": [
+        2
+      ]
     },
     "src/InfluxTransport.js": {
-      "expectCount": 4,
+      "expectCount": 5,
       "actualCount": 0,
       "undocumentLines": [
-        4,
+        2,
         5,
-        7,
-        10
+        6,
+        8,
+        11
       ]
     },
     "src/InfluxWriter.js": {
-      "expectCount": 8,
+      "expectCount": 9,
       "actualCount": 8,
-      "undocumentLines": []
+      "undocumentLines": [
+        3
+      ]
+    },
+    "src/index.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        2
+      ]
     }
   }
 }
