@@ -1,6 +1,12 @@
 language: node_js
 node_js:
 - 8
+- 9
+- 10
+- 11
+- 12
+- 13
+- 14
 deploy:
   provider: npm
   email: honza.machala@seznam.cz
