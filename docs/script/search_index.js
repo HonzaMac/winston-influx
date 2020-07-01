@@ -6,6 +6,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "@honzamac/winston-influx/src/batcher.js~eventemitter",
+    "variable/index.html#static-variable-EventEmitter",
+    "<span>EventEmitter</span> <span class=\"search-result-import-path\">@honzamac/winston-influx/src/Batcher.js</span>",
+    "variable"
+  ],
+  [
     "@honzamac/winston-influx/src/influxtransport.js~influxtransport",
     "class/src/InfluxTransport.js~InfluxTransport.html",
     "<span>InfluxTransport</span> <span class=\"search-result-import-path\">@honzamac/winston-influx/src/InfluxTransport.js</span>",

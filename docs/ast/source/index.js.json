@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 260,
+  "end": 303,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 11,
+      "line": 12,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 260,
+    "end": 303,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 11,
+        "line": 12,
         "column": 0
       }
     },
@@ -31,7 +31,7 @@
       {
         "type": "ImportDeclaration",
         "start": 0,
-        "end": 45,
+        "end": 42,
         "loc": {
           "start": {
             "line": 1,
@@ -39,121 +39,55 @@
           },
           "end": {
             "line": 1,
-            "column": 45
+            "column": 42
           }
         },
         "specifiers": [
           {
-            "type": "ImportSpecifier",
-            "start": 8,
-            "end": 15,
+            "type": "ImportNamespaceSpecifier",
+            "start": 7,
+            "end": 25,
             "loc": {
               "start": {
                 "line": 1,
-                "column": 8
+                "column": 7
               },
               "end": {
                 "line": 1,
-                "column": 15
+                "column": 25
               }
-            },
-            "imported": {
-              "type": "Identifier",
-              "start": 8,
-              "end": 15,
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 8
-                },
-                "end": {
-                  "line": 1,
-                  "column": 15
-                },
-                "identifierName": "connect"
-              },
-              "name": "connect"
             },
             "local": {
               "type": "Identifier",
-              "start": 8,
-              "end": 15,
+              "start": 12,
+              "end": 25,
               "loc": {
                 "start": {
                   "line": 1,
-                  "column": 8
+                  "column": 12
                 },
                 "end": {
                   "line": 1,
-                  "column": 15
+                  "column": 25
                 },
-                "identifierName": "connect"
+                "identifierName": "KC345M2TPHZJE"
               },
-              "name": "connect"
-            }
-          },
-          {
-            "type": "ImportSpecifier",
-            "start": 17,
-            "end": 27,
-            "loc": {
-              "start": {
-                "line": 1,
-                "column": 17
-              },
-              "end": {
-                "line": 1,
-                "column": 27
-              }
-            },
-            "imported": {
-              "type": "Identifier",
-              "start": 17,
-              "end": 27,
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 17
-                },
-                "end": {
-                  "line": 1,
-                  "column": 27
-                },
-                "identifierName": "writePoint"
-              },
-              "name": "writePoint"
-            },
-            "local": {
-              "type": "Identifier",
-              "start": 17,
-              "end": 27,
-              "loc": {
-                "start": {
-                  "line": 1,
-                  "column": 17
-                },
-                "end": {
-                  "line": 1,
-                  "column": 27
-                },
-                "identifierName": "writePoint"
-              },
-              "name": "writePoint"
+              "name": "KC345M2TPHZJE"
             }
           }
         ],
         "source": {
           "type": "StringLiteral",
-          "start": 34,
-          "end": 44,
+          "start": 31,
+          "end": 41,
           "loc": {
             "start": {
               "line": 1,
-              "column": 34
+              "column": 31
             },
             "end": {
               "line": 1,
-              "column": 44
+              "column": 41
             }
           },
           "extra": {
@@ -164,8 +98,8 @@
         }
       },
       {
-        "type": "ImportDeclaration",
-        "start": 46,
+        "type": "VariableDeclaration",
+        "start": 44,
         "end": 88,
         "loc": {
           "start": {
@@ -174,35 +108,212 @@
           },
           "end": {
             "line": 2,
+            "column": 44
+          }
+        },
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "start": 50,
+            "end": 87,
+            "loc": {
+              "start": {
+                "line": 2,
+                "column": 6
+              },
+              "end": {
+                "line": 2,
+                "column": 43
+              }
+            },
+            "id": {
+              "type": "ObjectPattern",
+              "start": 50,
+              "end": 71,
+              "loc": {
+                "start": {
+                  "line": 2,
+                  "column": 6
+                },
+                "end": {
+                  "line": 2,
+                  "column": 27
+                }
+              },
+              "properties": [
+                {
+                  "type": "ObjectProperty",
+                  "start": 51,
+                  "end": 58,
+                  "loc": {
+                    "start": {
+                      "line": 2,
+                      "column": 7
+                    },
+                    "end": {
+                      "line": 2,
+                      "column": 14
+                    }
+                  },
+                  "method": false,
+                  "shorthand": true,
+                  "computed": false,
+                  "key": {
+                    "type": "Identifier",
+                    "start": 51,
+                    "end": 58,
+                    "loc": {
+                      "start": {
+                        "line": 2,
+                        "column": 7
+                      },
+                      "end": {
+                        "line": 2,
+                        "column": 14
+                      },
+                      "identifierName": "connect"
+                    },
+                    "name": "connect"
+                  },
+                  "value": {
+                    "type": "Identifier",
+                    "start": 51,
+                    "end": 58,
+                    "loc": {
+                      "start": {
+                        "line": 2,
+                        "column": 7
+                      },
+                      "end": {
+                        "line": 2,
+                        "column": 14
+                      },
+                      "identifierName": "connect"
+                    },
+                    "name": "connect"
+                  },
+                  "extra": {
+                    "shorthand": true
+                  }
+                },
+                {
+                  "type": "ObjectProperty",
+                  "start": 60,
+                  "end": 70,
+                  "loc": {
+                    "start": {
+                      "line": 2,
+                      "column": 16
+                    },
+                    "end": {
+                      "line": 2,
+                      "column": 26
+                    }
+                  },
+                  "method": false,
+                  "shorthand": true,
+                  "computed": false,
+                  "key": {
+                    "type": "Identifier",
+                    "start": 60,
+                    "end": 70,
+                    "loc": {
+                      "start": {
+                        "line": 2,
+                        "column": 16
+                      },
+                      "end": {
+                        "line": 2,
+                        "column": 26
+                      },
+                      "identifierName": "writePoint"
+                    },
+                    "name": "writePoint"
+                  },
+                  "value": {
+                    "type": "Identifier",
+                    "start": 60,
+                    "end": 70,
+                    "loc": {
+                      "start": {
+                        "line": 2,
+                        "column": 16
+                      },
+                      "end": {
+                        "line": 2,
+                        "column": 26
+                      },
+                      "identifierName": "writePoint"
+                    },
+                    "name": "writePoint"
+                  },
+                  "extra": {
+                    "shorthand": true
+                  }
+                }
+              ]
+            },
+            "init": {
+              "type": "Identifier",
+              "start": 74,
+              "end": 87,
+              "loc": {
+                "start": {
+                  "line": 2,
+                  "column": 30
+                },
+                "end": {
+                  "line": 2,
+                  "column": 43
+                },
+                "identifierName": "KC345M2TPHZJE"
+              },
+              "name": "KC345M2TPHZJE"
+            }
+          }
+        ],
+        "kind": "const"
+      },
+      {
+        "type": "ImportDeclaration",
+        "start": 89,
+        "end": 131,
+        "loc": {
+          "start": {
+            "line": 3,
+            "column": 0
+          },
+          "end": {
+            "line": 3,
             "column": 42
           }
         },
         "specifiers": [
           {
             "type": "ImportDefaultSpecifier",
-            "start": 53,
-            "end": 65,
+            "start": 96,
+            "end": 108,
             "loc": {
               "start": {
-                "line": 2,
+                "line": 3,
                 "column": 7
               },
               "end": {
-                "line": 2,
+                "line": 3,
                 "column": 19
               }
             },
             "local": {
               "type": "Identifier",
-              "start": 53,
-              "end": 65,
+              "start": 96,
+              "end": 108,
               "loc": {
                 "start": {
-                  "line": 2,
+                  "line": 3,
                   "column": 7
                 },
                 "end": {
-                  "line": 2,
+                  "line": 3,
                   "column": 19
                 },
                 "identifierName": "InfluxWriter"
@@ -213,15 +324,15 @@
         ],
         "source": {
           "type": "StringLiteral",
-          "start": 71,
-          "end": 87,
+          "start": 114,
+          "end": 130,
           "loc": {
             "start": {
-              "line": 2,
+              "line": 3,
               "column": 25
             },
             "end": {
-              "line": 2,
+              "line": 3,
               "column": 41
             }
           },
@@ -234,44 +345,44 @@
       },
       {
         "type": "ImportDeclaration",
-        "start": 89,
-        "end": 121,
+        "start": 132,
+        "end": 164,
         "loc": {
           "start": {
-            "line": 3,
+            "line": 4,
             "column": 0
           },
           "end": {
-            "line": 3,
+            "line": 4,
             "column": 32
           }
         },
         "specifiers": [
           {
             "type": "ImportDefaultSpecifier",
-            "start": 96,
-            "end": 103,
+            "start": 139,
+            "end": 146,
             "loc": {
               "start": {
-                "line": 3,
+                "line": 4,
                 "column": 7
               },
               "end": {
-                "line": 3,
+                "line": 4,
                 "column": 14
               }
             },
             "local": {
               "type": "Identifier",
-              "start": 96,
-              "end": 103,
+              "start": 139,
+              "end": 146,
               "loc": {
                 "start": {
-                  "line": 3,
+                  "line": 4,
                   "column": 7
                 },
                 "end": {
-                  "line": 3,
+                  "line": 4,
                   "column": 14
                 },
                 "identifierName": "Batcher"
@@ -282,15 +393,15 @@
         ],
         "source": {
           "type": "StringLiteral",
-          "start": 109,
-          "end": 120,
+          "start": 152,
+          "end": 163,
           "loc": {
             "start": {
-              "line": 3,
+              "line": 4,
               "column": 20
             },
             "end": {
-              "line": 3,
+              "line": 4,
               "column": 31
             }
           },
@@ -303,44 +414,44 @@
       },
       {
         "type": "ImportDeclaration",
-        "start": 122,
-        "end": 170,
+        "start": 165,
+        "end": 213,
         "loc": {
           "start": {
-            "line": 4,
+            "line": 5,
             "column": 0
           },
           "end": {
-            "line": 4,
+            "line": 5,
             "column": 48
           }
         },
         "specifiers": [
           {
             "type": "ImportDefaultSpecifier",
-            "start": 129,
-            "end": 144,
+            "start": 172,
+            "end": 187,
             "loc": {
               "start": {
-                "line": 4,
+                "line": 5,
                 "column": 7
               },
               "end": {
-                "line": 4,
+                "line": 5,
                 "column": 22
               }
             },
             "local": {
               "type": "Identifier",
-              "start": 129,
-              "end": 144,
+              "start": 172,
+              "end": 187,
               "loc": {
                 "start": {
-                  "line": 4,
+                  "line": 5,
                   "column": 7
                 },
                 "end": {
-                  "line": 4,
+                  "line": 5,
                   "column": 22
                 },
                 "identifierName": "InfluxTransport"
@@ -351,15 +462,15 @@
         ],
         "source": {
           "type": "StringLiteral",
-          "start": 150,
-          "end": 169,
+          "start": 193,
+          "end": 212,
           "loc": {
             "start": {
-              "line": 4,
+              "line": 5,
               "column": 28
             },
             "end": {
-              "line": 4,
+              "line": 5,
               "column": 47
             }
           },
@@ -372,15 +483,15 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 172,
-        "end": 259,
+        "start": 215,
+        "end": 302,
         "loc": {
           "start": {
-            "line": 6,
+            "line": 7,
             "column": 0
           },
           "end": {
-            "line": 10,
+            "line": 11,
             "column": 17
           }
         },
@@ -388,29 +499,29 @@
         "specifiers": [
           {
             "type": "ExportSpecifier",
-            "start": 181,
-            "end": 193,
+            "start": 224,
+            "end": 236,
             "loc": {
               "start": {
-                "line": 6,
+                "line": 7,
                 "column": 9
               },
               "end": {
-                "line": 6,
+                "line": 7,
                 "column": 21
               }
             },
             "local": {
               "type": "Identifier",
-              "start": 181,
-              "end": 193,
+              "start": 224,
+              "end": 236,
               "loc": {
                 "start": {
-                  "line": 6,
+                  "line": 7,
                   "column": 9
                 },
                 "end": {
-                  "line": 6,
+                  "line": 7,
                   "column": 21
                 },
                 "identifierName": "InfluxWriter"
@@ -419,15 +530,15 @@
             },
             "exported": {
               "type": "Identifier",
-              "start": 181,
-              "end": 193,
+              "start": 224,
+              "end": 236,
               "loc": {
                 "start": {
-                  "line": 6,
+                  "line": 7,
                   "column": 9
                 },
                 "end": {
-                  "line": 6,
+                  "line": 7,
                   "column": 21
                 },
                 "identifierName": "InfluxWriter"
@@ -437,29 +548,29 @@
           },
           {
             "type": "ExportSpecifier",
-            "start": 199,
-            "end": 214,
+            "start": 242,
+            "end": 257,
             "loc": {
               "start": {
-                "line": 7,
+                "line": 8,
                 "column": 4
               },
               "end": {
-                "line": 7,
+                "line": 8,
                 "column": 19
               }
             },
             "local": {
               "type": "Identifier",
-              "start": 199,
-              "end": 214,
+              "start": 242,
+              "end": 257,
               "loc": {
                 "start": {
-                  "line": 7,
+                  "line": 8,
                   "column": 4
                 },
                 "end": {
-                  "line": 7,
+                  "line": 8,
                   "column": 19
                 },
                 "identifierName": "InfluxTransport"
@@ -468,15 +579,15 @@
             },
             "exported": {
               "type": "Identifier",
-              "start": 199,
-              "end": 214,
+              "start": 242,
+              "end": 257,
               "loc": {
                 "start": {
-                  "line": 7,
+                  "line": 8,
                   "column": 4
                 },
                 "end": {
-                  "line": 7,
+                  "line": 8,
                   "column": 19
                 },
                 "identifierName": "InfluxTransport"
@@ -486,57 +597,8 @@
           },
           {
             "type": "ExportSpecifier",
-            "start": 220,
-            "end": 227,
-            "loc": {
-              "start": {
-                "line": 8,
-                "column": 4
-              },
-              "end": {
-                "line": 8,
-                "column": 11
-              }
-            },
-            "local": {
-              "type": "Identifier",
-              "start": 220,
-              "end": 227,
-              "loc": {
-                "start": {
-                  "line": 8,
-                  "column": 4
-                },
-                "end": {
-                  "line": 8,
-                  "column": 11
-                },
-                "identifierName": "Batcher"
-              },
-              "name": "Batcher"
-            },
-            "exported": {
-              "type": "Identifier",
-              "start": 220,
-              "end": 227,
-              "loc": {
-                "start": {
-                  "line": 8,
-                  "column": 4
-                },
-                "end": {
-                  "line": 8,
-                  "column": 11
-                },
-                "identifierName": "Batcher"
-              },
-              "name": "Batcher"
-            }
-          },
-          {
-            "type": "ExportSpecifier",
-            "start": 233,
-            "end": 240,
+            "start": 263,
+            "end": 270,
             "loc": {
               "start": {
                 "line": 9,
@@ -549,8 +611,8 @@
             },
             "local": {
               "type": "Identifier",
-              "start": 233,
-              "end": 240,
+              "start": 263,
+              "end": 270,
               "loc": {
                 "start": {
                   "line": 9,
@@ -560,14 +622,14 @@
                   "line": 9,
                   "column": 11
                 },
-                "identifierName": "connect"
+                "identifierName": "Batcher"
               },
-              "name": "connect"
+              "name": "Batcher"
             },
             "exported": {
               "type": "Identifier",
-              "start": 233,
-              "end": 240,
+              "start": 263,
+              "end": 270,
               "loc": {
                 "start": {
                   "line": 9,
@@ -575,6 +637,55 @@
                 },
                 "end": {
                   "line": 9,
+                  "column": 11
+                },
+                "identifierName": "Batcher"
+              },
+              "name": "Batcher"
+            }
+          },
+          {
+            "type": "ExportSpecifier",
+            "start": 276,
+            "end": 283,
+            "loc": {
+              "start": {
+                "line": 10,
+                "column": 4
+              },
+              "end": {
+                "line": 10,
+                "column": 11
+              }
+            },
+            "local": {
+              "type": "Identifier",
+              "start": 276,
+              "end": 283,
+              "loc": {
+                "start": {
+                  "line": 10,
+                  "column": 4
+                },
+                "end": {
+                  "line": 10,
+                  "column": 11
+                },
+                "identifierName": "connect"
+              },
+              "name": "connect"
+            },
+            "exported": {
+              "type": "Identifier",
+              "start": 276,
+              "end": 283,
+              "loc": {
+                "start": {
+                  "line": 10,
+                  "column": 4
+                },
+                "end": {
+                  "line": 10,
                   "column": 11
                 },
                 "identifierName": "connect"
@@ -584,29 +695,29 @@
           },
           {
             "type": "ExportSpecifier",
-            "start": 246,
-            "end": 256,
+            "start": 289,
+            "end": 299,
             "loc": {
               "start": {
-                "line": 10,
+                "line": 11,
                 "column": 4
               },
               "end": {
-                "line": 10,
+                "line": 11,
                 "column": 14
               }
             },
             "local": {
               "type": "Identifier",
-              "start": 246,
-              "end": 256,
+              "start": 289,
+              "end": 299,
               "loc": {
                 "start": {
-                  "line": 10,
+                  "line": 11,
                   "column": 4
                 },
                 "end": {
-                  "line": 10,
+                  "line": 11,
                   "column": 14
                 },
                 "identifierName": "writePoint"
@@ -615,15 +726,15 @@
             },
             "exported": {
               "type": "Identifier",
-              "start": 246,
-              "end": 256,
+              "start": 289,
+              "end": 299,
               "loc": {
                 "start": {
-                  "line": 10,
+                  "line": 11,
                   "column": 4
                 },
                 "end": {
-                  "line": 10,
+                  "line": 11,
                   "column": 14
                 },
                 "identifierName": "writePoint"
@@ -669,16 +780,18 @@
     },
     {
       "type": {
-        "label": "{",
+        "label": "*",
         "beforeExpr": true,
-        "startsExpr": true,
+        "startsExpr": false,
         "rightAssociative": false,
         "isLoop": false,
         "isAssign": false,
         "prefix": false,
         "postfix": false,
-        "binop": null
+        "binop": 10,
+        "updateContext": null
       },
+      "value": "*",
       "start": 7,
       "end": 8,
       "loc": {
@@ -704,43 +817,17 @@
         "postfix": false,
         "binop": null
       },
-      "value": "connect",
-      "start": 8,
-      "end": 15,
+      "value": "as",
+      "start": 9,
+      "end": 11,
       "loc": {
         "start": {
           "line": 1,
-          "column": 8
+          "column": 9
         },
         "end": {
           "line": 1,
-          "column": 15
-        }
-      }
-    },
-    {
-      "type": {
-        "label": ",",
-        "beforeExpr": true,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null,
-        "updateContext": null
-      },
-      "start": 15,
-      "end": 16,
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 15
-        },
-        "end": {
-          "line": 1,
-          "column": 16
+          "column": 11
         }
       }
     },
@@ -756,42 +843,17 @@
         "postfix": false,
         "binop": null
       },
-      "value": "writePoint",
-      "start": 17,
-      "end": 27,
+      "value": "KC345M2TPHZJE",
+      "start": 12,
+      "end": 25,
       "loc": {
         "start": {
           "line": 1,
-          "column": 17
+          "column": 12
         },
         "end": {
           "line": 1,
-          "column": 27
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "}",
-        "beforeExpr": false,
-        "startsExpr": false,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 27,
-      "end": 28,
-      "loc": {
-        "start": {
-          "line": 1,
-          "column": 27
-        },
-        "end": {
-          "line": 1,
-          "column": 28
+          "column": 25
         }
       }
     },
@@ -808,16 +870,16 @@
         "binop": null
       },
       "value": "from",
-      "start": 29,
-      "end": 33,
+      "start": 26,
+      "end": 30,
       "loc": {
         "start": {
           "line": 1,
-          "column": 29
+          "column": 26
         },
         "end": {
           "line": 1,
-          "column": 33
+          "column": 30
         }
       }
     },
@@ -835,16 +897,16 @@
         "updateContext": null
       },
       "value": "./global",
-      "start": 34,
-      "end": 44,
+      "start": 31,
+      "end": 41,
       "loc": {
         "start": {
           "line": 1,
-          "column": 34
+          "column": 31
         },
         "end": {
           "line": 1,
-          "column": 44
+          "column": 41
         }
       }
     },
@@ -861,25 +923,25 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 44,
-      "end": 45,
+      "start": 41,
+      "end": 42,
       "loc": {
         "start": {
           "line": 1,
-          "column": 44
+          "column": 41
         },
         "end": {
           "line": 1,
-          "column": 45
+          "column": 42
         }
       }
     },
     {
       "type": {
-        "label": "import",
-        "keyword": "import",
+        "label": "const",
+        "keyword": "const",
         "beforeExpr": false,
-        "startsExpr": true,
+        "startsExpr": false,
         "rightAssociative": false,
         "isLoop": false,
         "isAssign": false,
@@ -888,9 +950,9 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "import",
-      "start": 46,
-      "end": 52,
+      "value": "const",
+      "start": 44,
+      "end": 49,
       "loc": {
         "start": {
           "line": 2,
@@ -898,7 +960,32 @@
         },
         "end": {
           "line": 2,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 50,
+      "end": 51,
+      "loc": {
+        "start": {
+          "line": 2,
           "column": 6
+        },
+        "end": {
+          "line": 2,
+          "column": 7
         }
       }
     },
@@ -914,9 +1001,9 @@
         "postfix": false,
         "binop": null
       },
-      "value": "InfluxWriter",
-      "start": 53,
-      "end": 65,
+      "value": "connect",
+      "start": 51,
+      "end": 58,
       "loc": {
         "start": {
           "line": 2,
@@ -924,41 +1011,15 @@
         },
         "end": {
           "line": 2,
-          "column": 19
+          "column": 14
         }
       }
     },
     {
       "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "from",
-      "start": 66,
-      "end": 70,
-      "loc": {
-        "start": {
-          "line": 2,
-          "column": 20
-        },
-        "end": {
-          "line": 2,
-          "column": 24
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "string",
-        "beforeExpr": false,
-        "startsExpr": true,
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
         "rightAssociative": false,
         "isLoop": false,
         "isAssign": false,
@@ -967,17 +1028,120 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "./InfluxWriter",
-      "start": 71,
+      "start": 58,
+      "end": 59,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 14
+        },
+        "end": {
+          "line": 2,
+          "column": 15
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "writePoint",
+      "start": 60,
+      "end": 70,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 16
+        },
+        "end": {
+          "line": 2,
+          "column": 26
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 70,
+      "end": 71,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 26
+        },
+        "end": {
+          "line": 2,
+          "column": 27
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": true,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "=",
+      "start": 72,
+      "end": 73,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 28
+        },
+        "end": {
+          "line": 2,
+          "column": 29
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "KC345M2TPHZJE",
+      "start": 74,
       "end": 87,
       "loc": {
         "start": {
           "line": 2,
-          "column": 25
+          "column": 30
         },
         "end": {
           "line": 2,
-          "column": 41
+          "column": 43
         }
       }
     },
@@ -999,11 +1163,11 @@
       "loc": {
         "start": {
           "line": 2,
-          "column": 41
+          "column": 43
         },
         "end": {
           "line": 2,
-          "column": 42
+          "column": 44
         }
       }
     },
@@ -1047,9 +1211,9 @@
         "postfix": false,
         "binop": null
       },
-      "value": "Batcher",
+      "value": "InfluxWriter",
       "start": 96,
-      "end": 103,
+      "end": 108,
       "loc": {
         "start": {
           "line": 3,
@@ -1057,6 +1221,139 @@
         },
         "end": {
           "line": 3,
+          "column": 19
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "from",
+      "start": 109,
+      "end": 113,
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 20
+        },
+        "end": {
+          "line": 3,
+          "column": 24
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "string",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "./InfluxWriter",
+      "start": 114,
+      "end": 130,
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 25
+        },
+        "end": {
+          "line": 3,
+          "column": 41
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 130,
+      "end": 131,
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 41
+        },
+        "end": {
+          "line": 3,
+          "column": 42
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "import",
+        "keyword": "import",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "import",
+      "start": 132,
+      "end": 138,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 6
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "Batcher",
+      "start": 139,
+      "end": 146,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 7
+        },
+        "end": {
+          "line": 4,
           "column": 14
         }
       }
@@ -1074,15 +1371,15 @@
         "binop": null
       },
       "value": "from",
-      "start": 104,
-      "end": 108,
+      "start": 147,
+      "end": 151,
       "loc": {
         "start": {
-          "line": 3,
+          "line": 4,
           "column": 15
         },
         "end": {
-          "line": 3,
+          "line": 4,
           "column": 19
         }
       }
@@ -1101,15 +1398,15 @@
         "updateContext": null
       },
       "value": "./Batcher",
-      "start": 109,
-      "end": 120,
+      "start": 152,
+      "end": 163,
       "loc": {
         "start": {
-          "line": 3,
+          "line": 4,
           "column": 20
         },
         "end": {
-          "line": 3,
+          "line": 4,
           "column": 31
         }
       }
@@ -1127,15 +1424,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 120,
-      "end": 121,
+      "start": 163,
+      "end": 164,
       "loc": {
         "start": {
-          "line": 3,
+          "line": 4,
           "column": 31
         },
         "end": {
-          "line": 3,
+          "line": 4,
           "column": 32
         }
       }
@@ -1155,15 +1452,15 @@
         "updateContext": null
       },
       "value": "import",
-      "start": 122,
-      "end": 128,
+      "start": 165,
+      "end": 171,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 5,
           "column": 0
         },
         "end": {
-          "line": 4,
+          "line": 5,
           "column": 6
         }
       }
@@ -1181,15 +1478,15 @@
         "binop": null
       },
       "value": "InfluxTransport",
-      "start": 129,
-      "end": 144,
+      "start": 172,
+      "end": 187,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 5,
           "column": 7
         },
         "end": {
-          "line": 4,
+          "line": 5,
           "column": 22
         }
       }
@@ -1207,15 +1504,15 @@
         "binop": null
       },
       "value": "from",
-      "start": 145,
-      "end": 149,
+      "start": 188,
+      "end": 192,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 5,
           "column": 23
         },
         "end": {
-          "line": 4,
+          "line": 5,
           "column": 27
         }
       }
@@ -1234,15 +1531,15 @@
         "updateContext": null
       },
       "value": "./InfluxTransport",
-      "start": 150,
-      "end": 169,
+      "start": 193,
+      "end": 212,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 5,
           "column": 28
         },
         "end": {
-          "line": 4,
+          "line": 5,
           "column": 47
         }
       }
@@ -1260,15 +1557,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 169,
-      "end": 170,
+      "start": 212,
+      "end": 213,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 5,
           "column": 47
         },
         "end": {
-          "line": 4,
+          "line": 5,
           "column": 48
         }
       }
@@ -1288,15 +1585,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 172,
-      "end": 178,
+      "start": 215,
+      "end": 221,
       "loc": {
         "start": {
-          "line": 6,
+          "line": 7,
           "column": 0
         },
         "end": {
-          "line": 6,
+          "line": 7,
           "column": 6
         }
       }
@@ -1313,15 +1610,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 179,
-      "end": 180,
+      "start": 222,
+      "end": 223,
       "loc": {
         "start": {
-          "line": 6,
+          "line": 7,
           "column": 7
         },
         "end": {
-          "line": 6,
+          "line": 7,
           "column": 8
         }
       }
@@ -1339,15 +1636,15 @@
         "binop": null
       },
       "value": "InfluxWriter",
-      "start": 181,
-      "end": 193,
+      "start": 224,
+      "end": 236,
       "loc": {
         "start": {
-          "line": 6,
+          "line": 7,
           "column": 9
         },
         "end": {
-          "line": 6,
+          "line": 7,
           "column": 21
         }
       }
@@ -1365,15 +1662,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 193,
-      "end": 194,
+      "start": 236,
+      "end": 237,
       "loc": {
         "start": {
-          "line": 6,
+          "line": 7,
           "column": 21
         },
         "end": {
-          "line": 6,
+          "line": 7,
           "column": 22
         }
       }
@@ -1391,15 +1688,15 @@
         "binop": null
       },
       "value": "InfluxTransport",
-      "start": 199,
-      "end": 214,
+      "start": 242,
+      "end": 257,
       "loc": {
         "start": {
-          "line": 7,
+          "line": 8,
           "column": 4
         },
         "end": {
-          "line": 7,
+          "line": 8,
           "column": 19
         }
       }
@@ -1417,15 +1714,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 214,
-      "end": 215,
+      "start": 257,
+      "end": 258,
       "loc": {
         "start": {
-          "line": 7,
+          "line": 8,
           "column": 19
         },
         "end": {
-          "line": 7,
+          "line": 8,
           "column": 20
         }
       }
@@ -1443,15 +1740,15 @@
         "binop": null
       },
       "value": "Batcher",
-      "start": 220,
-      "end": 227,
+      "start": 263,
+      "end": 270,
       "loc": {
         "start": {
-          "line": 8,
+          "line": 9,
           "column": 4
         },
         "end": {
-          "line": 8,
+          "line": 9,
           "column": 11
         }
       }
@@ -1469,15 +1766,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 227,
-      "end": 228,
+      "start": 270,
+      "end": 271,
       "loc": {
         "start": {
-          "line": 8,
+          "line": 9,
           "column": 11
         },
         "end": {
-          "line": 8,
+          "line": 9,
           "column": 12
         }
       }
@@ -1495,15 +1792,15 @@
         "binop": null
       },
       "value": "connect",
-      "start": 233,
-      "end": 240,
+      "start": 276,
+      "end": 283,
       "loc": {
         "start": {
-          "line": 9,
+          "line": 10,
           "column": 4
         },
         "end": {
-          "line": 9,
+          "line": 10,
           "column": 11
         }
       }
@@ -1521,15 +1818,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 240,
-      "end": 241,
+      "start": 283,
+      "end": 284,
       "loc": {
         "start": {
-          "line": 9,
+          "line": 10,
           "column": 11
         },
         "end": {
-          "line": 9,
+          "line": 10,
           "column": 12
         }
       }
@@ -1547,15 +1844,15 @@
         "binop": null
       },
       "value": "writePoint",
-      "start": 246,
-      "end": 256,
+      "start": 289,
+      "end": 299,
       "loc": {
         "start": {
-          "line": 10,
+          "line": 11,
           "column": 4
         },
         "end": {
-          "line": 10,
+          "line": 11,
           "column": 14
         }
       }
@@ -1572,15 +1869,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 257,
-      "end": 258,
+      "start": 300,
+      "end": 301,
       "loc": {
         "start": {
-          "line": 10,
+          "line": 11,
           "column": 15
         },
         "end": {
-          "line": 10,
+          "line": 11,
           "column": 16
         }
       }
@@ -1598,15 +1895,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 258,
-      "end": 259,
+      "start": 301,
+      "end": 302,
       "loc": {
         "start": {
-          "line": 10,
+          "line": 11,
           "column": 16
         },
         "end": {
-          "line": 10,
+          "line": 11,
           "column": 17
         }
       }
@@ -1624,15 +1921,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 260,
-      "end": 260,
+      "start": 303,
+      "end": 303,
       "loc": {
         "start": {
-          "line": 11,
+          "line": 12,
           "column": 0
         },
         "end": {
-          "line": 11,
+          "line": 12,
           "column": 0
         }
       }

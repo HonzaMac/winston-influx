@@ -1,5 +1,5 @@
 # InfluxDB Transport
-[![Documentation](./docs/badge.svg)](https://scriptinatorio.github.io/winston-influx/) 
+[![Documentation](./docs/badge.svg)](https://honzamac.github.io/winston-influx/) 
 
 This package is used by Scriptinator's services to aggregate logging and other measurements. We use InfluxDB as our
 time-series database of choice.
