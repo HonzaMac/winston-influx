@@ -14,3 +14,7 @@ test-results.xml
 
 ### npm publish
 package-lock.json
+
+# stryker temp files
+.stryker-tmp
+reports/

@@ -4,7 +4,9 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "npm run lint && npm run jest && npm run stryker",
+    "jest": "jest",
+    "stryker": "stryker run",
     "lint": "eslint .",
     "prepublishOnly": "npm run lint && npm run test && esdoc"
   },
@@ -26,6 +28,8 @@
     "winston-transport": "^4.4.0"
   },
   "devDependencies": {
+    "@stryker-mutator/core": "^4.4.1",
+    "@stryker-mutator/jest-runner": "^4.4.1",
     "@types/jest": "^26.0.20",
     "esdoc": "^1.1.0",
     "esdoc-ecmascript-proposal-plugin": "^1.0.0",
@@ -33,6 +37,17 @@
     "esdoc-standard-plugin": "^1.0.0",
     "eslint": "^7.21.0",
     "eslint-plugin-jest": "^24.1.7",
-    "jest": "^26.6.3"
+    "jest": "^26.6.3",
+    "stryker-cli": "^1.0.0"
+  },
+  "jest": {
+    "clearMocks": true,
+    "coverageDirectory": "coverage",
+    "coverageProvider": "v8",
+    "testEnvironment": "node",
+    "testMatch": [
+      "__tests__/**/*.[jt]s?(x)",
+      "**/?(*.)+(spec|test).[tj]s?(x)"
+    ]
   }
 }
