@@ -1,17 +1,27 @@
-const Batcher = require('./Batcher.js');
-const {InfluxDB, toNanoDate, Precision} = require('influx');
-const os = require('os');
+import os from "os"
+import { IClusterConfig, InfluxDB, ISingleHostConfig, toNanoDate } from "influx"
 
+import Batcher, { IBatcherOptions } from "./Batcher"
+
+
+type InfluxDbOptions = ISingleHostConfig | IClusterConfig
+export type InfluxWriteOptions = InfluxDbOptions & IBatcherOptions & {
+    tags: Record<string, string>
+}
 /**
  * InfluxWriter batches points and writes them to influxdb.
  * @type {module.InfluxWriter}
  */
-module.exports = class InfluxWriter {
+export default class InfluxWriter {
+    protected _counter: number
+    private _tags: Record<string, string>
+    protected _influx: InfluxDB
+    private _batcher: Batcher
     /**
      *
      * @param options
      */
-    constructor(options = {}) {
+    constructor(options: InfluxWriteOptions) {
         /**
          * @type {InfluxDB}
          */
@@ -21,7 +31,7 @@ module.exports = class InfluxWriter {
          * @private
          */
         this._batcher = new Batcher(options);
-        this._batcher.on('flush', batch => this._flushBatch(batch));
+        this._batcher.on('flush', (batch: any[]) => this._flushBatch(batch));
         /**
          * Influx will overwrite points using the same timestamp and tags.
          * To work around this we use this _counter field as the nanosecond
@@ -48,7 +58,7 @@ module.exports = class InfluxWriter {
      * @param {Object.<String, *>} fields The list of field values to insert.
      * @param {Date} [time=new Date()] The time for the measurement.
      */
-    writePoint(measurement, tags, fields, time = new Date()) {
+    writePoint(measurement: string, tags: Record<string, string>, fields: Record<string, any>, time = new Date()) {
         this._counter = (this._counter + 1) % 1000;
 
         this._batcher.write({
@@ -66,8 +76,11 @@ module.exports = class InfluxWriter {
      * @param batch
      * @private
      */
-    _flushBatch(batch) {
-        this._influx.writePoints(batch, {precision: Precision.Nanoseconds})
-            .catch(err => console.error(`Failed to write batch to influx: ${err}`));
+    async _flushBatch(batch: any[]) {
+        try {
+            await this._influx.writePoints(batch, {precision: 'n'})
+        } catch(err) {
+            console.error(`Failed to write batch to influx: ${err}`);
+        }
     }
-};
+}

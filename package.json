@@ -1,14 +1,23 @@
 {
   "name": "@honzamac/winston-influx",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "winston",
+    "influxdb"
+  ],
   "scripts": {
-    "test": "npm run lint && npm run jest && npm run stryker",
-    "jest": "jest",
-    "stryker": "stryker run",
     "lint": "eslint .",
-    "prepublishOnly": "npm run lint && npm run test && esdoc"
+    "types": "tsc -p tsconfig.json --skipLibCheck --noEmit",
+    "test": "npm run lint && npm run types && npm run jest && npm run stryker",
+    "stryker": "stryker run",
+    "build": "tsc -p tsconfig.production.json --declaration",
+    "prepublishOnly": "npm run test && npm run build && esdoc",
+    "jest": "jest"
   },
   "repository": {
     "type": "git",
@@ -31,6 +40,7 @@
     "@stryker-mutator/core": "^4.4.1",
     "@stryker-mutator/jest-runner": "^4.4.1",
     "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.31",
     "esdoc": "^1.1.0",
     "esdoc-ecmascript-proposal-plugin": "^1.0.0",
     "esdoc-node": "^1.0.5",
@@ -38,9 +48,13 @@
     "eslint": "^7.21.0",
     "eslint-plugin-jest": "^24.1.7",
     "jest": "^26.6.3",
-    "stryker-cli": "^1.0.0"
+    "logform": "^2.2.0",
+    "stryker-cli": "^1.0.0",
+    "ts-jest": "^26.5.3",
+    "typescript": "^4.2.3"
   },
   "jest": {
+    "preset": "ts-jest",
     "clearMocks": true,
     "coverageDirectory": "coverage",
     "coverageProvider": "v8",
@@ -48,6 +62,11 @@
     "testMatch": [
       "__tests__/**/*.[jt]s?(x)",
       "**/?(*.)+(spec|test).[tj]s?(x)"
+    ],
+    "coverageReporters": [
+      "text",
+      "html",
+      "cobertura"
     ]
   }
 }
