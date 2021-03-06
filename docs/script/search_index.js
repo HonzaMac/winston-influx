@@ -1,27 +1,33 @@
 window.esdocSearchIndex = [
   [
-    "@honzamac/winston-influx/src/batcher.js~batcher",
-    "class/src/Batcher.js~Batcher.html",
-    "<span>Batcher</span> <span class=\"search-result-import-path\">@honzamac/winston-influx/src/Batcher.js</span>",
+    "@honzamac/winston-influx/src/batcher.ts~batcher",
+    "class/src/Batcher.ts~Batcher.html",
+    "<span>Batcher</span> <span class=\"search-result-import-path\">@honzamac/winston-influx/src/Batcher.ts</span>",
     "class"
   ],
   [
-    "@honzamac/winston-influx/src/batcher.js~eventemitter",
-    "variable/index.html#static-variable-EventEmitter",
-    "<span>EventEmitter</span> <span class=\"search-result-import-path\">@honzamac/winston-influx/src/Batcher.js</span>",
-    "variable"
-  ],
-  [
-    "@honzamac/winston-influx/src/influxtransport.js~influxtransport",
-    "class/src/InfluxTransport.js~InfluxTransport.html",
-    "<span>InfluxTransport</span> <span class=\"search-result-import-path\">@honzamac/winston-influx/src/InfluxTransport.js</span>",
+    "@honzamac/winston-influx/src/influxtransport.ts~influxtransport",
+    "class/src/InfluxTransport.ts~InfluxTransport.html",
+    "<span>InfluxTransport</span> <span class=\"search-result-import-path\">@honzamac/winston-influx/src/InfluxTransport.ts</span>",
     "class"
   ],
   [
-    "@honzamac/winston-influx/src/influxwriter.js~influxwriter",
-    "class/src/InfluxWriter.js~InfluxWriter.html",
-    "<span>InfluxWriter</span> <span class=\"search-result-import-path\">@honzamac/winston-influx/src/InfluxWriter.js</span>",
+    "@honzamac/winston-influx/src/influxwriter.ts~influxwriter",
+    "class/src/InfluxWriter.ts~InfluxWriter.html",
+    "<span>InfluxWriter</span> <span class=\"search-result-import-path\">@honzamac/winston-influx/src/InfluxWriter.ts</span>",
     "class"
+  ],
+  [
+    "@honzamac/winston-influx/src/global.ts~connect",
+    "function/index.html#static-function-connect",
+    "<span>connect</span> <span class=\"search-result-import-path\">@honzamac/winston-influx/src/global.ts</span>",
+    "function"
+  ],
+  [
+    "@honzamac/winston-influx/src/global.ts~writepoint",
+    "function/index.html#static-function-writePoint",
+    "<span>writePoint</span> <span class=\"search-result-import-path\">@honzamac/winston-influx/src/global.ts</span>",
+    "function"
   ],
   [
     "src/.external-ecmascript.js~array",
@@ -306,135 +312,141 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
-    "src/batcher.js",
-    "file/src/Batcher.js.html",
-    "src/Batcher.js",
+    "src/batcher.ts",
+    "file/src/Batcher.ts.html",
+    "src/Batcher.ts",
     "file"
   ],
   [
-    "src/batcher.js~batcher#_batch",
-    "class/src/Batcher.js~Batcher.html#instance-member-_batch",
-    "src/Batcher.js~Batcher#_batch",
+    "src/batcher.ts~batcher#_batch",
+    "class/src/Batcher.ts~Batcher.html#instance-member-_batch",
+    "src/Batcher.ts~Batcher#_batch",
     "member"
   ],
   [
-    "src/batcher.js~batcher#_interval",
-    "class/src/Batcher.js~Batcher.html#instance-member-_interval",
-    "src/Batcher.js~Batcher#_interval",
+    "src/batcher.ts~batcher#_interval",
+    "class/src/Batcher.ts~Batcher.html#instance-member-_interval",
+    "src/Batcher.ts~Batcher#_interval",
     "member"
   ],
   [
-    "src/batcher.js~batcher#_options",
-    "class/src/Batcher.js~Batcher.html#instance-member-_options",
-    "src/Batcher.js~Batcher#_options",
+    "src/batcher.ts~batcher#batchsize",
+    "class/src/Batcher.ts~Batcher.html#instance-member-batchSize",
+    "src/Batcher.ts~Batcher#batchSize",
     "member"
   ],
   [
-    "src/batcher.js~batcher#close",
-    "class/src/Batcher.js~Batcher.html#instance-method-close",
-    "src/Batcher.js~Batcher#close",
+    "src/batcher.ts~batcher#close",
+    "class/src/Batcher.ts~Batcher.html#instance-method-close",
+    "src/Batcher.ts~Batcher#close",
     "method"
   ],
   [
-    "src/batcher.js~batcher#constructor",
-    "class/src/Batcher.js~Batcher.html#instance-constructor-constructor",
-    "src/Batcher.js~Batcher#constructor",
+    "src/batcher.ts~batcher#constructor",
+    "class/src/Batcher.ts~Batcher.html#instance-constructor-constructor",
+    "src/Batcher.ts~Batcher#constructor",
     "method"
   ],
   [
-    "src/batcher.js~batcher#flush",
-    "class/src/Batcher.js~Batcher.html#instance-method-flush",
-    "src/Batcher.js~Batcher#flush",
+    "src/batcher.ts~batcher#flush",
+    "class/src/Batcher.ts~Batcher.html#instance-method-flush",
+    "src/Batcher.ts~Batcher#flush",
     "method"
   ],
   [
-    "src/batcher.js~batcher#write",
-    "class/src/Batcher.js~Batcher.html#instance-method-write",
-    "src/Batcher.js~Batcher#write",
+    "src/batcher.ts~batcher#timeinterval",
+    "class/src/Batcher.ts~Batcher.html#instance-member-timeInterval",
+    "src/Batcher.ts~Batcher#timeInterval",
+    "member"
+  ],
+  [
+    "src/batcher.ts~batcher#write",
+    "class/src/Batcher.ts~Batcher.html#instance-method-write",
+    "src/Batcher.ts~Batcher#write",
     "method"
   ],
   [
-    "src/batcher.js~ibatcheroptions",
-    "typedef/index.html#static-typedef-IBatcherOptions",
-    "src/Batcher.js~IBatcherOptions",
-    "typedef"
-  ],
-  [
-    "src/influxtransport.js",
-    "file/src/InfluxTransport.js.html",
-    "src/InfluxTransport.js",
+    "src/influxtransport.ts",
+    "file/src/InfluxTransport.ts.html",
+    "src/InfluxTransport.ts",
     "file"
   ],
   [
-    "src/influxtransport.js~influxtransport#_writefn",
-    "class/src/InfluxTransport.js~InfluxTransport.html#instance-member-_writeFn",
-    "src/InfluxTransport.js~InfluxTransport#_writeFn",
+    "src/influxtransport.ts~influxtransport#_writefn",
+    "class/src/InfluxTransport.ts~InfluxTransport.html#instance-member-_writeFn",
+    "src/InfluxTransport.ts~InfluxTransport#_writeFn",
     "member"
   ],
   [
-    "src/influxtransport.js~influxtransport#constructor",
-    "class/src/InfluxTransport.js~InfluxTransport.html#instance-constructor-constructor",
-    "src/InfluxTransport.js~InfluxTransport#constructor",
+    "src/influxtransport.ts~influxtransport#constructor",
+    "class/src/InfluxTransport.ts~InfluxTransport.html#instance-constructor-constructor",
+    "src/InfluxTransport.ts~InfluxTransport#constructor",
     "method"
   ],
   [
-    "src/influxtransport.js~influxtransport#log",
-    "class/src/InfluxTransport.js~InfluxTransport.html#instance-method-log",
-    "src/InfluxTransport.js~InfluxTransport#log",
+    "src/influxtransport.ts~influxtransport#log",
+    "class/src/InfluxTransport.ts~InfluxTransport.html#instance-method-log",
+    "src/InfluxTransport.ts~InfluxTransport#log",
     "method"
   ],
   [
-    "src/influxwriter.js",
-    "file/src/InfluxWriter.js.html",
-    "src/InfluxWriter.js",
+    "src/influxwriter.ts",
+    "file/src/InfluxWriter.ts.html",
+    "src/InfluxWriter.ts",
     "file"
   ],
   [
-    "src/influxwriter.js~influxwriter#_batcher",
-    "class/src/InfluxWriter.js~InfluxWriter.html#instance-member-_batcher",
-    "src/InfluxWriter.js~InfluxWriter#_batcher",
+    "src/influxwriter.ts~influxwriter#_batcher",
+    "class/src/InfluxWriter.ts~InfluxWriter.html#instance-member-_batcher",
+    "src/InfluxWriter.ts~InfluxWriter#_batcher",
     "member"
   ],
   [
-    "src/influxwriter.js~influxwriter#_counter",
-    "class/src/InfluxWriter.js~InfluxWriter.html#instance-member-_counter",
-    "src/InfluxWriter.js~InfluxWriter#_counter",
+    "src/influxwriter.ts~influxwriter#_counter",
+    "class/src/InfluxWriter.ts~InfluxWriter.html#instance-member-_counter",
+    "src/InfluxWriter.ts~InfluxWriter#_counter",
     "member"
   ],
   [
-    "src/influxwriter.js~influxwriter#_flushbatch",
-    "class/src/InfluxWriter.js~InfluxWriter.html#instance-method-_flushBatch",
-    "src/InfluxWriter.js~InfluxWriter#_flushBatch",
+    "src/influxwriter.ts~influxwriter#_flushbatch",
+    "class/src/InfluxWriter.ts~InfluxWriter.html#instance-method-_flushBatch",
+    "src/InfluxWriter.ts~InfluxWriter#_flushBatch",
     "method"
   ],
   [
-    "src/influxwriter.js~influxwriter#_influx",
-    "class/src/InfluxWriter.js~InfluxWriter.html#instance-member-_influx",
-    "src/InfluxWriter.js~InfluxWriter#_influx",
+    "src/influxwriter.ts~influxwriter#_influx",
+    "class/src/InfluxWriter.ts~InfluxWriter.html#instance-member-_influx",
+    "src/InfluxWriter.ts~InfluxWriter#_influx",
     "member"
   ],
   [
-    "src/influxwriter.js~influxwriter#_tags",
-    "class/src/InfluxWriter.js~InfluxWriter.html#instance-member-_tags",
-    "src/InfluxWriter.js~InfluxWriter#_tags",
+    "src/influxwriter.ts~influxwriter#_tags",
+    "class/src/InfluxWriter.ts~InfluxWriter.html#instance-member-_tags",
+    "src/InfluxWriter.ts~InfluxWriter#_tags",
     "member"
   ],
   [
-    "src/influxwriter.js~influxwriter#constructor",
-    "class/src/InfluxWriter.js~InfluxWriter.html#instance-constructor-constructor",
-    "src/InfluxWriter.js~InfluxWriter#constructor",
+    "src/influxwriter.ts~influxwriter#constructor",
+    "class/src/InfluxWriter.ts~InfluxWriter.html#instance-constructor-constructor",
+    "src/InfluxWriter.ts~InfluxWriter#constructor",
     "method"
   ],
   [
-    "src/influxwriter.js~influxwriter#writepoint",
-    "class/src/InfluxWriter.js~InfluxWriter.html#instance-method-writePoint",
-    "src/InfluxWriter.js~InfluxWriter#writePoint",
+    "src/influxwriter.ts~influxwriter#writepoint",
+    "class/src/InfluxWriter.ts~InfluxWriter.html#instance-method-writePoint",
+    "src/InfluxWriter.ts~InfluxWriter#writePoint",
     "method"
   ],
   [
-    "src/index.js",
-    "file/src/index.js.html",
-    "src/index.js",
+    "src/global.ts",
+    "file/src/global.ts.html",
+    "src/global.ts",
+    "file"
+  ],
+  [
+    "src/index.ts",
+    "file/src/index.ts.html",
+    "src/index.ts",
     "file"
   ]
 ]

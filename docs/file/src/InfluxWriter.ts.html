@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/InfluxWriter.ts | @honzamac/winston-influx</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/honzamac/winston-influx"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Batcher.ts~Batcher.html">Batcher</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/InfluxTransport.ts~InfluxTransport.html">InfluxTransport</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/InfluxWriter.ts~InfluxWriter.html">InfluxWriter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-connect">connect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-writePoint">writePoint</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/InfluxWriter.ts</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import os from &quot;os&quot;
+import { IClusterConfig, InfluxDB, ISingleHostConfig, toNanoDate } from &quot;influx&quot;
+
+import Batcher, { IBatcherOptions } from &quot;./Batcher&quot;
+
+
+type InfluxDbOptions = ISingleHostConfig | IClusterConfig
+export type InfluxWriteOptions = InfluxDbOptions &amp; IBatcherOptions &amp; {
+    tags: Record&lt;string, string&gt;
+}
+/**
+ * InfluxWriter batches points and writes them to influxdb.
+ * @type {module.InfluxWriter}
+ */
+export default class InfluxWriter {
+    protected _counter: number
+    private _tags: Record&lt;string, string&gt;
+    protected _influx: InfluxDB
+    private _batcher: Batcher
+    /**
+     *
+     * @param options
+     */
+    constructor(options: InfluxWriteOptions) {
+        /**
+         * @type {InfluxDB}
+         */
+        this._influx = new InfluxDB(options);
+        /**
+         * @type {module.Batcher}
+         * @private
+         */
+        this._batcher = new Batcher(options);
+        this._batcher.on(&apos;flush&apos;, (batch: any[]) =&gt; this._flushBatch(batch));
+        /**
+         * Influx will overwrite points using the same timestamp and tags.
+         * To work around this we use this _counter field as the nanosecond
+         * segment of the timestamp and increment it every time a point is
+         * written. This way it is extremely unlikely that any points are
+         * overwritten.
+         * @type {number}
+         * @private
+         */
+        this._counter = 0;
+        /**
+         * @type {Object&lt;String, String&gt;}
+         * @private
+         */
+        this._tags = options.tags || {};
+    }
+
+    /**
+     * Add a point to the current batch. If this batch has exceeded the maximum batch
+     * size it will be flushed.
+     *
+     * @param {String} measurement The Influx measurement name.
+     * @param {Object.&lt;String, String&gt;} tags The list of tag values to insert.
+     * @param {Object.&lt;String, *&gt;} fields The list of field values to insert.
+     * @param {Date} [time=new Date()] The time for the measurement.
+     */
+    writePoint(measurement: string, tags: Record&lt;string, string&gt;, fields: Record&lt;string, any&gt;, time = new Date()) {
+        this._counter = (this._counter + 1) % 1000;
+
+        this._batcher.write({
+            measurement: measurement,
+            tags: {hostname: os.hostname(), ...this._tags, ...tags},
+            fields: fields,
+            timestamp: toNanoDate(
+                time.getTime() + &apos;000&apos; + this._counter.toString().padStart(3, &apos;0&apos;)
+            )
+        });
+    }
+
+    /**
+     * Flush a batch to InfluxDB. This method is triggered by the &apos;flush&apos; event from Batcher.
+     * @param batch
+     * @private
+     */
+    async _flushBatch(batch: any[]) {
+        try {
+            await this._influx.writePoints(batch, {precision: &apos;n&apos;})
+        } catch(err) {
+            console.error(`Failed to write batch to influx: ${err}`);
+        }
+    }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

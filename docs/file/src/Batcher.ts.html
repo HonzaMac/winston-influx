@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/Batcher.ts | @honzamac/winston-influx</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/honzamac/winston-influx"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Batcher.ts~Batcher.html">Batcher</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/InfluxTransport.ts~InfluxTransport.html">InfluxTransport</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/InfluxWriter.ts~InfluxWriter.html">InfluxWriter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-connect">connect</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-writePoint">writePoint</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/Batcher.ts</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import EventEmitter from &quot;events&quot;
+
+export interface IBatcherOptions {
+    /** @type number [interval=10] The flush interval in seconds. If you set this value then the batch will be flushed on a regular interval */
+    interval?: number;
+    /** @type {number} [batchSize=5000] The maximum batch size. If the batch has reached this size it will be flushed.
+     * If you have set an &apos;interval&apos; and this interval has not yet been reached, the batch is flushed anyway. */
+    batchSize?: number;
+}
+
+/**
+ * Batcher provides a way to batch a lot of inputs into groups. It has two mechanisms to do this.
+ * The first mechanism is to set the &apos;batchSize&apos; option to the maximum desired size of a single batch. When the buffer
+ * has reached this size it will flush the batch.
+ * The second option is to set the &apos;interval&apos; option. If this option is set the batch will be flushed when either
+ * maximum batch size is reached or the interval has passed.
+ * @example
+ * const {Batcher} = require(&apos;@honzamac/winston-influx&apos;);
+ *
+ * let batch = new Batcher({interval: 10});
+ *
+ * batch.on(&apos;flush&apos;, function(data) {
+ *   console.log(&apos;Here is a large array of data!&apos;);
+ *   console.log(data);
+ * });
+ *
+ * for(let i = 0; i &lt; 5000; i++) {
+ *   batch.write(i);
+ * }
+ */
+export default class Batcher extends EventEmitter {
+    private batchSize = 5000
+    private timeInterval = 0
+    private _batch: any[] = []
+    private _interval?: NodeJS.Timeout
+
+    /**
+     * Create a new Batcher and, if the &apos;interval&apos; option is supplied, start the interval timer.
+     * @param {IBatcherOptions} [options={batchSize: 5000, interval: 0}]
+     */
+    constructor(options: IBatcherOptions) {
+        super();
+
+        if (options.batchSize) {
+            this.batchSize = options.batchSize || 5000
+        }
+
+        if (options.interval) {
+            this.timeInterval = options.interval || 0
+            /**
+             * If the interval options is set, this contains a reference for the set interval
+             * @type {number}
+             * @private
+             */
+            this._interval = setInterval(() =&gt; this.flush(), this.timeInterval);
+        }
+    }
+
+    /**
+     * Write an item to the batch.
+     * @param {*} item
+     */
+    write(item: any) {
+        this._batch.push(item);
+        this.emit(&apos;write&apos;, item);
+        if (this._batch.length &gt;= this.batchSize) {
+            this.flush();
+        }
+    }
+
+    /**
+     * Flush the current batch. If the batch is empty, this method does nothing.
+     */
+    flush() {
+        if (this._batch.length &gt; 0) {
+            this.emit(&apos;flush&apos;, this._batch);
+            this._batch = [];
+        }
+    }
+
+    /**
+     * Stop the interval timer.
+     */
+    close() {
+        if (this._interval) {
+            clearInterval(this._interval);
+        }
+    }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
