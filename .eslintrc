@@ -1,15 +1,25 @@
 {
+  "plugins": [
+    "jest"
+  ],
   "extends": [
-    "eslint:recommended"
+    "eslint:recommended",
+    "plugin:jest/all"
   ],
   "env": {
-    "node": true
+    "jest/globals": true,
+    "node": true,
+    "es6": true
   },
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": 2018
   },
   "rules": {
+    "jest/prefer-expect-assertions": [
+      "warn",
+      { "onlyFunctionsWithAsyncKeyword": true }
+    ],
     "quotes": [
       "error",
       "single"
