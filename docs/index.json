@@ -566,119 +566,44 @@
   {
     "__docId__": 48,
     "kind": "file",
-    "name": "src/Batcher.js",
-    "content": "const {EventEmitter} = require('events');\n\n/**\n * @typedef {Object} IBatcherOptions\n * @property {Number} [interval=10] The flush interval in seconds. If you set this value then the batch will be flushed\n *      on a regular interval\n * @property {Number} [batchSize=5000] The maximum batch size. If the batch has reached this size it will be flushed.\n *      If you have set an 'interval' and this interval has not yet been reached, the batch is flushed anyway.\n */\n\n/**\n * Batcher provides a way to batch a lot of inputs into groups. It has two mechanisms to do this.\n * The first mechanism is to set the 'batchSize' option to the maximum desired size of a single batch. When the buffer\n * has reached this size it will flush the batch.\n * The second option is to set the 'interval' option. If this option is set the batch will be flushed when either\n * maximum batch size is reached or the interval has passed.\n * @type {module.Batcher}\n * @example\n * const {Batcher} = require('@honzamac/winston-influx');\n *\n * let batch = new Batcher({interval: 10});\n *\n * batch.on('flush', function(data) {\n *   console.log('Here is a large array of data!');\n *   console.log(data);\n * });\n *\n * for(let i = 0; i < 5000; i++) {\n *   batch.write(i);\n * }\n */\nmodule.exports = class Batcher extends EventEmitter {\n    /**\n     * Create a new Batcher and, if the 'interval' option is supplied, start the interval timer.\n     * @param {IBatcherOptions} [options={batchSize: 5000, interval: 0}]\n     */\n    constructor(options = {}) {\n        super();\n        /**\n         * @type {IBatcherOptions}\n         * @private\n         */\n        this._options = {batchSize: 5000, interval: 0, ...options};\n\n        if (options.interval) {\n            /**\n             * If the interval options is set, this contains a reference for the set interval\n             * @type {number}\n             * @private\n             */\n            this._interval = setInterval(() => this.flush(), options.interval);\n        }\n        /**\n         * @type {Array}\n         * @private\n         */\n        this._batch = [];\n    }\n\n    /**\n     * Write an item to the batch.\n     * @param {*} item\n     */\n    write(item) {\n        this._batch.push(item);\n        this.emit('write', item);\n        if (this._batch.length >= this._options.batchSize) {\n            this.flush();\n        }\n    }\n\n    /**\n     * Flush the current batch. If the batch is empty, this method does nothing.\n     */\n    flush() {\n        if (this._batch.length > 0) {\n            this.emit('flush', this._batch);\n            this._batch = [];\n        }\n    }\n\n    /**\n     * Stop the interval timer.\n     */\n    close() {\n        if (this._interval) {\n            clearInterval(this._interval);\n        }\n    }\n};\n",
+    "name": "src/Batcher.ts",
+    "content": "import EventEmitter from \"events\"\n\nexport interface IBatcherOptions {\n    /** @type number [interval=10] The flush interval in seconds. If you set this value then the batch will be flushed on a regular interval */\n    interval?: number;\n    /** @type {number} [batchSize=5000] The maximum batch size. If the batch has reached this size it will be flushed.\n     * If you have set an 'interval' and this interval has not yet been reached, the batch is flushed anyway. */\n    batchSize?: number;\n}\n\n/**\n * Batcher provides a way to batch a lot of inputs into groups. It has two mechanisms to do this.\n * The first mechanism is to set the 'batchSize' option to the maximum desired size of a single batch. When the buffer\n * has reached this size it will flush the batch.\n * The second option is to set the 'interval' option. If this option is set the batch will be flushed when either\n * maximum batch size is reached or the interval has passed.\n * @example\n * const {Batcher} = require('@honzamac/winston-influx');\n *\n * let batch = new Batcher({interval: 10});\n *\n * batch.on('flush', function(data) {\n *   console.log('Here is a large array of data!');\n *   console.log(data);\n * });\n *\n * for(let i = 0; i < 5000; i++) {\n *   batch.write(i);\n * }\n */\nexport default class Batcher extends EventEmitter {\n    private batchSize = 5000\n    private timeInterval = 0\n    private _batch: any[] = []\n    private _interval?: NodeJS.Timeout\n\n    /**\n     * Create a new Batcher and, if the 'interval' option is supplied, start the interval timer.\n     * @param {IBatcherOptions} [options={batchSize: 5000, interval: 0}]\n     */\n    constructor(options: IBatcherOptions) {\n        super();\n\n        if (options.batchSize) {\n            this.batchSize = options.batchSize || 5000\n        }\n\n        if (options.interval) {\n            this.timeInterval = options.interval || 0\n            /**\n             * If the interval options is set, this contains a reference for the set interval\n             * @type {number}\n             * @private\n             */\n            this._interval = setInterval(() => this.flush(), this.timeInterval);\n        }\n    }\n\n    /**\n     * Write an item to the batch.\n     * @param {*} item\n     */\n    write(item: any) {\n        this._batch.push(item);\n        this.emit('write', item);\n        if (this._batch.length >= this.batchSize) {\n            this.flush();\n        }\n    }\n\n    /**\n     * Flush the current batch. If the batch is empty, this method does nothing.\n     */\n    flush() {\n        if (this._batch.length > 0) {\n            this.emit('flush', this._batch);\n            this._batch = [];\n        }\n    }\n\n    /**\n     * Stop the interval timer.\n     */\n    close() {\n        if (this._interval) {\n            clearInterval(this._interval);\n        }\n    }\n}\n",
     "static": true,
-    "longname": "/Users/machalaj/projects/winston-influx/src/Batcher.js",
+    "longname": "/Users/machalaj/projects/winston-influx/src/Batcher.ts",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
     "__docId__": 49,
-    "kind": "variable",
-    "name": "EventEmitter",
-    "memberof": "src/Batcher.js",
-    "static": true,
-    "longname": "src/Batcher.js~EventEmitter",
-    "access": "public",
-    "export": false,
-    "importPath": "@honzamac/winston-influx/src/Batcher.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 2,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    },
-    "ignore": true
-  },
-  {
-    "__docId__": 50,
-    "kind": "typedef",
-    "name": "IBatcherOptions",
-    "memberof": "src/Batcher.js",
-    "static": true,
-    "longname": "src/Batcher.js~IBatcherOptions",
-    "access": "public",
-    "description": "",
-    "properties": [
-      {
-        "nullable": null,
-        "types": [
-          "Number"
-        ],
-        "spread": false,
-        "optional": true,
-        "defaultValue": "10",
-        "defaultRaw": 10,
-        "name": "interval",
-        "description": "The flush interval in seconds. If you set this value then the batch will be flushed\n     on a regular interval"
-      },
-      {
-        "nullable": null,
-        "types": [
-          "Number"
-        ],
-        "spread": false,
-        "optional": true,
-        "defaultValue": "5000",
-        "defaultRaw": 5000,
-        "name": "batchSize",
-        "description": "The maximum batch size. If the batch has reached this size it will be flushed.\n     If you have set an 'interval' and this interval has not yet been reached, the batch is flushed anyway."
-      }
-    ],
-    "type": {
-      "types": [
-        "Object"
-      ],
-      "optional": false,
-      "name": "IBatcherOptions"
-    }
-  },
-  {
-    "__docId__": 51,
     "kind": "class",
     "name": "Batcher",
-    "memberof": "src/Batcher.js",
+    "memberof": "src/Batcher.ts",
     "static": true,
-    "longname": "src/Batcher.js~Batcher",
+    "longname": "src/Batcher.ts~Batcher",
     "access": "public",
     "export": true,
-    "importPath": "@honzamac/winston-influx/src/Batcher.js",
+    "importPath": "@honzamac/winston-influx/src/Batcher.ts",
     "importStyle": "Batcher",
     "description": "Batcher provides a way to batch a lot of inputs into groups. It has two mechanisms to do this.\nThe first mechanism is to set the 'batchSize' option to the maximum desired size of a single batch. When the buffer\nhas reached this size it will flush the batch.\nThe second option is to set the 'interval' option. If this option is set the batch will be flushed when either\nmaximum batch size is reached or the interval has passed.",
-    "examples": [
-      "const {Batcher} = require('@honzamac/winston-influx');\n\nlet batch = new Batcher({interval: 10});\n\nbatch.on('flush', function(data) {\n  console.log('Here is a large array of data!');\n  console.log(data);\n});\n\nfor(let i = 0; i < 5000; i++) {\n  batch.write(i);\n}"
-    ],
-    "lineNumber": 33,
-    "type": {
-      "nullable": null,
-      "types": [
-        "module.Batcher"
-      ],
-      "spread": false,
-      "description": null
-    },
+    "lineNumber": 31,
     "interface": false,
     "extends": [
-      "EventEmitter"
+      "events~EventEmitter"
     ]
   },
   {
-    "__docId__": 52,
+    "__docId__": 50,
     "kind": "constructor",
     "name": "constructor",
-    "memberof": "src/Batcher.js~Batcher",
+    "memberof": "src/Batcher.ts~Batcher",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/Batcher.js~Batcher#constructor",
+    "longname": "src/Batcher.ts~Batcher#constructor",
     "access": "public",
     "description": "Create a new Batcher and, if the 'interval' option is supplied, start the interval timer.",
-    "lineNumber": 38,
+    "lineNumber": 17,
     "params": [
       {
         "nullable": null,
@@ -695,34 +620,63 @@
     ]
   },
   {
-    "__docId__": 53,
+    "__docId__": 51,
     "kind": "member",
-    "name": "_options",
-    "memberof": "src/Batcher.js~Batcher",
+    "name": "batchSize",
+    "memberof": "src/Batcher.ts~Batcher",
     "static": false,
-    "longname": "src/Batcher.js~Batcher#_options",
-    "access": "private",
+    "longname": "src/Batcher.ts~Batcher#batchSize",
+    "access": "public",
     "description": "",
-    "lineNumber": 44,
+    "lineNumber": 32,
     "type": {
-      "nullable": null,
       "types": [
-        "IBatcherOptions"
-      ],
-      "spread": false,
-      "description": null
+        "number"
+      ]
     }
   },
   {
-    "__docId__": 54,
+    "__docId__": 52,
+    "kind": "member",
+    "name": "timeInterval",
+    "memberof": "src/Batcher.ts~Batcher",
+    "static": false,
+    "longname": "src/Batcher.ts~Batcher#timeInterval",
+    "access": "public",
+    "description": "",
+    "lineNumber": 33,
+    "type": {
+      "types": [
+        "number"
+      ]
+    }
+  },
+  {
+    "__docId__": 53,
+    "kind": "member",
+    "name": "_batch",
+    "memberof": "src/Batcher.ts~Batcher",
+    "static": false,
+    "longname": "src/Batcher.ts~Batcher#_batch",
+    "access": "private",
+    "description": "",
+    "lineNumber": 34,
+    "type": {
+      "types": [
+        "*[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 56,
     "kind": "member",
     "name": "_interval",
-    "memberof": "src/Batcher.js~Batcher",
+    "memberof": "src/Batcher.ts~Batcher",
     "static": false,
-    "longname": "src/Batcher.js~Batcher#_interval",
+    "longname": "src/Batcher.ts~Batcher#_interval",
     "access": "private",
     "description": "If the interval options is set, this contains a reference for the set interval",
-    "lineNumber": 52,
+    "lineNumber": 50,
     "type": {
       "nullable": null,
       "types": [
@@ -733,41 +687,22 @@
     }
   },
   {
-    "__docId__": 55,
-    "kind": "member",
-    "name": "_batch",
-    "memberof": "src/Batcher.js~Batcher",
-    "static": false,
-    "longname": "src/Batcher.js~Batcher#_batch",
-    "access": "private",
-    "description": "",
-    "lineNumber": 58,
-    "type": {
-      "nullable": null,
-      "types": [
-        "Array"
-      ],
-      "spread": false,
-      "description": null
-    }
-  },
-  {
-    "__docId__": 56,
+    "__docId__": 57,
     "kind": "method",
     "name": "write",
-    "memberof": "src/Batcher.js~Batcher",
+    "memberof": "src/Batcher.ts~Batcher",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/Batcher.js~Batcher#write",
+    "longname": "src/Batcher.ts~Batcher#write",
     "access": "public",
     "description": "Write an item to the batch.",
-    "lineNumber": 65,
+    "lineNumber": 63,
     "params": [
       {
         "nullable": null,
         "types": [
-          "*"
+          "undefined"
         ],
         "spread": false,
         "optional": false,
@@ -778,81 +713,59 @@
     "return": null
   },
   {
-    "__docId__": 57,
+    "__docId__": 58,
     "kind": "method",
     "name": "flush",
-    "memberof": "src/Batcher.js~Batcher",
+    "memberof": "src/Batcher.ts~Batcher",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/Batcher.js~Batcher#flush",
+    "longname": "src/Batcher.ts~Batcher#flush",
     "access": "public",
     "description": "Flush the current batch. If the batch is empty, this method does nothing.",
-    "lineNumber": 76,
-    "params": [],
-    "return": null
-  },
-  {
-    "__docId__": 59,
-    "kind": "method",
-    "name": "close",
-    "memberof": "src/Batcher.js~Batcher",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/Batcher.js~Batcher#close",
-    "access": "public",
-    "description": "Stop the interval timer.",
-    "lineNumber": 86,
+    "lineNumber": 74,
     "params": [],
     "return": null
   },
   {
     "__docId__": 60,
+    "kind": "method",
+    "name": "close",
+    "memberof": "src/Batcher.ts~Batcher",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/Batcher.ts~Batcher#close",
+    "access": "public",
+    "description": "Stop the interval timer.",
+    "lineNumber": 84,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 61,
     "kind": "file",
-    "name": "src/InfluxTransport.js",
-    "content": "const {writePoint} = require('./global');\nconst Transport = require('winston-transport');\n\nmodule.exports = class InfluxTransport extends Transport {\n    constructor(writer) {\n        super();\n        this._writeFn = writer ? writer.writePoint.bind(writer) : writePoint;\n    }\n\n    log(info, callback) {\n        setImmediate(() => {\n            this.emit('logged', info);\n        });\n\n        this._writeFn(\n            'log',\n            {\n                level: info.level\n            },\n            {\n                message: info.message,\n            }\n        );\n\n        callback();\n    }\n};\n",
+    "name": "src/InfluxTransport.ts",
+    "content": "import Transport from \"winston-transport\"\nimport { writePoint } from \"./global\"\nimport InfluxWriter from \"./InfluxWriter\"\n\n\nexport default class InfluxTransport extends Transport {\n    private readonly _writeFn: any\n    constructor(writer: InfluxWriter) {\n        super();\n        this._writeFn = writer ? writer.writePoint.bind(writer) : writePoint;\n    }\n\n    log(info: any, next: () => void) {\n        setImmediate(() => {\n            this.emit('logged', info);\n        });\n\n        this._writeFn(\n            'log',\n            {\n                level: info.level\n            },\n            {\n                message: info.message,\n            }\n        );\n\n        next();\n    }\n}\n",
     "static": true,
-    "longname": "/Users/machalaj/projects/winston-influx/src/InfluxTransport.js",
+    "longname": "/Users/machalaj/projects/winston-influx/src/InfluxTransport.ts",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 61,
-    "kind": "variable",
-    "name": "writePoint",
-    "memberof": "src/InfluxTransport.js",
-    "static": true,
-    "longname": "src/InfluxTransport.js~writePoint",
-    "access": "public",
-    "export": false,
-    "importPath": "@honzamac/winston-influx/src/InfluxTransport.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 2,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    },
-    "ignore": true
-  },
-  {
     "__docId__": 62,
     "kind": "class",
     "name": "InfluxTransport",
-    "memberof": "src/InfluxTransport.js",
+    "memberof": "src/InfluxTransport.ts",
     "static": true,
-    "longname": "src/InfluxTransport.js~InfluxTransport",
+    "longname": "src/InfluxTransport.ts~InfluxTransport",
     "access": "public",
     "export": true,
-    "importPath": "@honzamac/winston-influx/src/InfluxTransport.js",
+    "importPath": "@honzamac/winston-influx/src/InfluxTransport.ts",
     "importStyle": "InfluxTransport",
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 6,
     "interface": false,
     "extends": [
       "winston-transport~Transport"
@@ -862,26 +775,26 @@
     "__docId__": 63,
     "kind": "constructor",
     "name": "constructor",
-    "memberof": "src/InfluxTransport.js~InfluxTransport",
+    "memberof": "src/InfluxTransport.ts~InfluxTransport",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/InfluxTransport.js~InfluxTransport#constructor",
+    "longname": "src/InfluxTransport.ts~InfluxTransport#constructor",
     "access": "public",
     "description": null,
-    "lineNumber": 6,
+    "lineNumber": 10,
     "undocument": true
   },
   {
     "__docId__": 64,
     "kind": "member",
     "name": "_writeFn",
-    "memberof": "src/InfluxTransport.js~InfluxTransport",
+    "memberof": "src/InfluxTransport.ts~InfluxTransport",
     "static": false,
-    "longname": "src/InfluxTransport.js~InfluxTransport#_writeFn",
+    "longname": "src/InfluxTransport.ts~InfluxTransport#_writeFn",
     "access": "private",
     "description": null,
-    "lineNumber": 8,
+    "lineNumber": 12,
     "undocument": true,
     "type": {
       "types": [
@@ -893,27 +806,34 @@
     "__docId__": 65,
     "kind": "method",
     "name": "log",
-    "memberof": "src/InfluxTransport.js~InfluxTransport",
+    "memberof": "src/InfluxTransport.ts~InfluxTransport",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/InfluxTransport.js~InfluxTransport#log",
+    "longname": "src/InfluxTransport.ts~InfluxTransport#log",
     "access": "public",
-    "description": null,
-    "lineNumber": 11,
-    "undocument": true,
+    "description": "",
+    "lineNumber": 13,
     "params": [
       {
-        "name": "info",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "undefined"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "info",
+        "description": ""
       },
       {
-        "name": "callback",
+        "nullable": null,
         "types": [
-          "*"
-        ]
+          "undefined"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "next",
+        "description": ""
       }
     ],
     "return": null
@@ -921,67 +841,38 @@
   {
     "__docId__": 66,
     "kind": "file",
-    "name": "src/InfluxWriter.js",
-    "content": "const Batcher = require('./Batcher.js');\nconst {InfluxDB, toNanoDate, Precision} = require('influx');\nconst os = require('os');\n\n/**\n * InfluxWriter batches points and writes them to influxdb.\n * @type {module.InfluxWriter}\n */\nmodule.exports = class InfluxWriter {\n    /**\n     *\n     * @param options\n     */\n    constructor(options = {}) {\n        /**\n         * @type {InfluxDB}\n         */\n        this._influx = new InfluxDB(options);\n        /**\n         * @type {module.Batcher}\n         * @private\n         */\n        this._batcher = new Batcher(options);\n        this._batcher.on('flush', batch => this._flushBatch(batch));\n        /**\n         * Influx will overwrite points using the same timestamp and tags.\n         * To work around this we use this _counter field as the nanosecond\n         * segment of the timestamp and increment it every time a point is\n         * written. This way it is extremely unlikely that any points are\n         * overwritten.\n         * @type {number}\n         * @private\n         */\n        this._counter = 0;\n        /**\n         * @type {Object<String, String>}\n         * @private\n         */\n        this._tags = options.tags || {};\n    }\n\n    /**\n     * Add a point to the current batch. If this batch has exceeded the maximum batch\n     * size it will be flushed.\n     *\n     * @param {String} measurement The Influx measurement name.\n     * @param {Object.<String, String>} tags The list of tag values to insert.\n     * @param {Object.<String, *>} fields The list of field values to insert.\n     * @param {Date} [time=new Date()] The time for the measurement.\n     */\n    writePoint(measurement, tags, fields, time = new Date()) {\n        this._counter = (this._counter + 1) % 1000;\n\n        this._batcher.write({\n            measurement: measurement,\n            tags: {hostname: os.hostname(), ...this._tags, ...tags},\n            fields: fields,\n            timestamp: toNanoDate(\n                time.getTime() + '000' + this._counter.toString().padStart(3, '0')\n            )\n        });\n    }\n\n    /**\n     * Flush a batch to InfluxDB. This method is triggered by the 'flush' event from Batcher.\n     * @param batch\n     * @private\n     */\n    _flushBatch(batch) {\n        this._influx.writePoints(batch, {precision: Precision.Nanoseconds})\n            .catch(err => console.error(`Failed to write batch to influx: ${err}`));\n    }\n};\n",
+    "name": "src/InfluxWriter.ts",
+    "content": "import os from \"os\"\nimport { IClusterConfig, InfluxDB, ISingleHostConfig, toNanoDate } from \"influx\"\n\nimport Batcher, { IBatcherOptions } from \"./Batcher\"\n\n\ntype InfluxDbOptions = ISingleHostConfig | IClusterConfig\nexport type InfluxWriteOptions = InfluxDbOptions & IBatcherOptions & {\n    tags: Record<string, string>\n}\n/**\n * InfluxWriter batches points and writes them to influxdb.\n * @type {module.InfluxWriter}\n */\nexport default class InfluxWriter {\n    protected _counter: number\n    private _tags: Record<string, string>\n    protected _influx: InfluxDB\n    private _batcher: Batcher\n    /**\n     *\n     * @param options\n     */\n    constructor(options: InfluxWriteOptions) {\n        /**\n         * @type {InfluxDB}\n         */\n        this._influx = new InfluxDB(options);\n        /**\n         * @type {module.Batcher}\n         * @private\n         */\n        this._batcher = new Batcher(options);\n        this._batcher.on('flush', (batch: any[]) => this._flushBatch(batch));\n        /**\n         * Influx will overwrite points using the same timestamp and tags.\n         * To work around this we use this _counter field as the nanosecond\n         * segment of the timestamp and increment it every time a point is\n         * written. This way it is extremely unlikely that any points are\n         * overwritten.\n         * @type {number}\n         * @private\n         */\n        this._counter = 0;\n        /**\n         * @type {Object<String, String>}\n         * @private\n         */\n        this._tags = options.tags || {};\n    }\n\n    /**\n     * Add a point to the current batch. If this batch has exceeded the maximum batch\n     * size it will be flushed.\n     *\n     * @param {String} measurement The Influx measurement name.\n     * @param {Object.<String, String>} tags The list of tag values to insert.\n     * @param {Object.<String, *>} fields The list of field values to insert.\n     * @param {Date} [time=new Date()] The time for the measurement.\n     */\n    writePoint(measurement: string, tags: Record<string, string>, fields: Record<string, any>, time = new Date()) {\n        this._counter = (this._counter + 1) % 1000;\n\n        this._batcher.write({\n            measurement: measurement,\n            tags: {hostname: os.hostname(), ...this._tags, ...tags},\n            fields: fields,\n            timestamp: toNanoDate(\n                time.getTime() + '000' + this._counter.toString().padStart(3, '0')\n            )\n        });\n    }\n\n    /**\n     * Flush a batch to InfluxDB. This method is triggered by the 'flush' event from Batcher.\n     * @param batch\n     * @private\n     */\n    async _flushBatch(batch: any[]) {\n        try {\n            await this._influx.writePoints(batch, {precision: 'n'})\n        } catch(err) {\n            console.error(`Failed to write batch to influx: ${err}`);\n        }\n    }\n}\n",
     "static": true,
-    "longname": "/Users/machalaj/projects/winston-influx/src/InfluxWriter.js",
+    "longname": "/Users/machalaj/projects/winston-influx/src/InfluxWriter.ts",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
     "__docId__": 67,
-    "kind": "variable",
-    "name": "InfluxDB",
-    "memberof": "src/InfluxWriter.js",
-    "static": true,
-    "longname": "src/InfluxWriter.js~InfluxDB",
-    "access": "public",
-    "export": false,
-    "importPath": "@honzamac/winston-influx/src/InfluxWriter.js",
-    "importStyle": null,
-    "description": null,
-    "lineNumber": 3,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    },
-    "ignore": true
-  },
-  {
-    "__docId__": 68,
     "kind": "class",
     "name": "InfluxWriter",
-    "memberof": "src/InfluxWriter.js",
+    "memberof": "src/InfluxWriter.ts",
     "static": true,
-    "longname": "src/InfluxWriter.js~InfluxWriter",
+    "longname": "src/InfluxWriter.ts~InfluxWriter",
     "access": "public",
     "export": true,
-    "importPath": "@honzamac/winston-influx/src/InfluxWriter.js",
+    "importPath": "@honzamac/winston-influx/src/InfluxWriter.ts",
     "importStyle": "InfluxWriter",
     "description": "InfluxWriter batches points and writes them to influxdb.",
-    "lineNumber": 10,
-    "type": {
-      "nullable": null,
-      "types": [
-        "module.InfluxWriter"
-      ],
-      "spread": false,
-      "description": null
-    },
+    "lineNumber": 15,
     "interface": false
   },
   {
-    "__docId__": 69,
+    "__docId__": 68,
     "kind": "constructor",
     "name": "constructor",
-    "memberof": "src/InfluxWriter.js~InfluxWriter",
+    "memberof": "src/InfluxWriter.ts~InfluxWriter",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/InfluxWriter.js~InfluxWriter#constructor",
+    "longname": "src/InfluxWriter.ts~InfluxWriter#constructor",
     "access": "public",
     "description": "",
     "lineNumber": 15,
@@ -999,12 +890,12 @@
     ]
   },
   {
-    "__docId__": 70,
+    "__docId__": 69,
     "kind": "member",
     "name": "_influx",
-    "memberof": "src/InfluxWriter.js~InfluxWriter",
+    "memberof": "src/InfluxWriter.ts~InfluxWriter",
     "static": false,
-    "longname": "src/InfluxWriter.js~InfluxWriter#_influx",
+    "longname": "src/InfluxWriter.ts~InfluxWriter#_influx",
     "access": "private",
     "description": "",
     "lineNumber": 19,
@@ -1018,12 +909,12 @@
     }
   },
   {
-    "__docId__": 71,
+    "__docId__": 70,
     "kind": "member",
     "name": "_batcher",
-    "memberof": "src/InfluxWriter.js~InfluxWriter",
+    "memberof": "src/InfluxWriter.ts~InfluxWriter",
     "static": false,
-    "longname": "src/InfluxWriter.js~InfluxWriter#_batcher",
+    "longname": "src/InfluxWriter.ts~InfluxWriter#_batcher",
     "access": "private",
     "description": "",
     "lineNumber": 24,
@@ -1037,12 +928,12 @@
     }
   },
   {
-    "__docId__": 72,
+    "__docId__": 71,
     "kind": "member",
     "name": "_counter",
-    "memberof": "src/InfluxWriter.js~InfluxWriter",
+    "memberof": "src/InfluxWriter.ts~InfluxWriter",
     "static": false,
-    "longname": "src/InfluxWriter.js~InfluxWriter#_counter",
+    "longname": "src/InfluxWriter.ts~InfluxWriter#_counter",
     "access": "private",
     "description": "Influx will overwrite points using the same timestamp and tags.\nTo work around this we use this _counter field as the nanosecond\nsegment of the timestamp and increment it every time a point is\nwritten. This way it is extremely unlikely that any points are\noverwritten.",
     "lineNumber": 35,
@@ -1056,12 +947,12 @@
     }
   },
   {
-    "__docId__": 73,
+    "__docId__": 72,
     "kind": "member",
     "name": "_tags",
-    "memberof": "src/InfluxWriter.js~InfluxWriter",
+    "memberof": "src/InfluxWriter.ts~InfluxWriter",
     "static": false,
-    "longname": "src/InfluxWriter.js~InfluxWriter#_tags",
+    "longname": "src/InfluxWriter.ts~InfluxWriter#_tags",
     "access": "private",
     "description": "",
     "lineNumber": 40,
@@ -1075,80 +966,78 @@
     }
   },
   {
-    "__docId__": 74,
+    "__docId__": 73,
     "kind": "method",
     "name": "writePoint",
-    "memberof": "src/InfluxWriter.js~InfluxWriter",
+    "memberof": "src/InfluxWriter.ts~InfluxWriter",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/InfluxWriter.js~InfluxWriter#writePoint",
+    "longname": "src/InfluxWriter.ts~InfluxWriter#writePoint",
     "access": "public",
     "description": "Add a point to the current batch. If this batch has exceeded the maximum batch\nsize it will be flushed.",
-    "lineNumber": 52,
+    "lineNumber": 61,
     "params": [
       {
         "nullable": null,
         "types": [
-          "String"
+          "string"
         ],
         "spread": false,
         "optional": false,
         "name": "measurement",
-        "description": "The Influx measurement name."
+        "description": ""
       },
       {
         "nullable": null,
         "types": [
-          "Object.<String, String>"
+          "Record"
         ],
         "spread": false,
         "optional": false,
         "name": "tags",
-        "description": "The list of tag values to insert."
+        "description": ""
       },
       {
         "nullable": null,
         "types": [
-          "Object.<String, *>"
+          "Record"
         ],
         "spread": false,
         "optional": false,
         "name": "fields",
-        "description": "The list of field values to insert."
+        "description": ""
       },
       {
         "nullable": null,
         "types": [
-          "Date"
+          "undefined"
         ],
         "spread": false,
-        "optional": true,
-        "defaultValue": "new Date()",
-        "defaultRaw": "new Date()",
+        "optional": false,
         "name": "time",
-        "description": "The time for the measurement."
+        "description": ""
       }
     ],
     "return": null
   },
   {
-    "__docId__": 76,
+    "__docId__": 75,
     "kind": "method",
     "name": "_flushBatch",
-    "memberof": "src/InfluxWriter.js~InfluxWriter",
+    "memberof": "src/InfluxWriter.ts~InfluxWriter",
     "generator": false,
-    "async": false,
+    "async": true,
     "static": false,
-    "longname": "src/InfluxWriter.js~InfluxWriter#_flushBatch",
+    "longname": "src/InfluxWriter.ts~InfluxWriter#_flushBatch",
     "access": "private",
     "description": "Flush a batch to InfluxDB. This method is triggered by the 'flush' event from Batcher.",
-    "lineNumber": 70,
+    "lineNumber": 79,
     "params": [
       {
         "nullable": null,
         "types": [
-          "*"
+          "undefined"
         ],
         "spread": false,
         "optional": false,
@@ -1159,36 +1048,97 @@
     "return": null
   },
   {
-    "__docId__": 77,
+    "__docId__": 76,
     "kind": "file",
-    "name": "src/index.js",
-    "content": "const {connect, writePoint} = require('./global');\nconst InfluxWriter = require('./InfluxWriter');\nconst Batcher = require('./Batcher');\nconst InfluxTransport = require('./InfluxTransport');\n\nmodule.exports = {\n    InfluxWriter,\n    InfluxTransport,\n    Batcher,\n    connect,\n    writePoint\n};\n",
+    "name": "src/global.ts",
+    "content": "import InfluxWriter, { InfluxWriteOptions } from \"./InfluxWriter\"\n\nlet globalWriter: InfluxWriter;\n\nexport const connect = function (options: InfluxWriteOptions) {\n    globalWriter = new InfluxWriter(options);\n}\n\nexport const writePoint = function (measurement: string, tags: Record<string, string>, fields: Record<string, any>, time = new Date()) {\n    if (globalWriter) {\n        globalWriter.writePoint(measurement, tags, fields, time);\n    }\n}\n",
     "static": true,
-    "longname": "/Users/machalaj/projects/winston-influx/src/index.js",
+    "longname": "/Users/machalaj/projects/winston-influx/src/global.ts",
     "access": "public",
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 78,
-    "kind": "variable",
+    "__docId__": 77,
+    "kind": "function",
     "name": "connect",
-    "memberof": "src/index.js",
+    "memberof": "src/global.ts",
+    "generator": false,
+    "async": false,
     "static": true,
-    "longname": "src/index.js~connect",
+    "longname": "src/global.ts~connect",
     "access": "public",
-    "export": false,
-    "importPath": "@honzamac/winston-influx",
-    "importStyle": null,
+    "export": true,
+    "importPath": "@honzamac/winston-influx/src/global.ts",
+    "importStyle": "{connect}",
     "description": null,
-    "lineNumber": 2,
+    "lineNumber": 3,
     "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    },
-    "ignore": true
+    "params": [
+      {
+        "name": "options",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 78,
+    "kind": "function",
+    "name": "writePoint",
+    "memberof": "src/global.ts",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/global.ts~writePoint",
+    "access": "public",
+    "export": true,
+    "importPath": "@honzamac/winston-influx/src/global.ts",
+    "importStyle": "{writePoint}",
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "params": [
+      {
+        "name": "measurement",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "tags",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "fields",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "time",
+        "optional": true,
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 79,
+    "kind": "file",
+    "name": "src/index.ts",
+    "content": "import { connect, writePoint } from \"./global\"\nimport InfluxTransport from \"./InfluxTransport\"\nimport Batcher from \"./Batcher\"\nimport InfluxWriter from \"./InfluxWriter\"\n\nexport default {\n    InfluxWriter,\n    InfluxTransport,\n    Batcher,\n    connect,\n    writePoint\n}\n",
+    "static": true,
+    "longname": "/Users/machalaj/projects/winston-influx/src/index.ts",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
   },
   {
     "kind": "index",
@@ -1200,7 +1150,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"@honzamac/winston-influx\",\n  \"version\": \"1.2.0\",\n  \"description\": \"\",\n  \"main\": \"src/index.js\",\n  \"scripts\": {\n    \"test\": \"npm run lint && nyc mocha && esdoc\",\n    \"lint\": \"eslint src\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/honzamac/winston-influx.git\"\n  },\n  \"author\": \"HonzaMac,Scriptinator\",\n  \"license\": \"Apache-2.0\",\n  \"bugs\": {\n    \"url\": \"https://github.com/honzamac/winston-influx/issues\"\n  },\n  \"engines\": {\n    \"node\": \">=10\"\n  },\n  \"homepage\": \"https://github.com/honzamac/winston-influx#readme\",\n  \"dependencies\": {\n    \"influx\": \"^5.6.0\",\n    \"winston-transport\": \"^4.4.0\"\n  },\n  \"devDependencies\": {\n    \"chai\": \"^4.2.0\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n    \"esdoc-node\": \"^1.0.5\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^7.3.1\",\n    \"mocha\": \"^8.0.1\",\n    \"mocha-junit-reporter\": \"^2.0.0\",\n    \"mocha-multi-reporters\": \"^1.1.7\",\n    \"nodemon\": \"^2.0.4\",\n    \"nyc\": \"^15.1.0\"\n  }\n}\n",
+    "content": "{\n  \"name\": \"@honzamac/winston-influx\",\n  \"version\": \"1.2.2\",\n  \"description\": \"\",\n  \"main\": \"dist/index.js\",\n  \"files\": [\n    \"dist\",\n    \"docs\"\n  ],\n  \"keywords\": [\n    \"winston\",\n    \"influxdb\"\n  ],\n  \"scripts\": {\n    \"lint\": \"eslint .\",\n    \"types\": \"tsc -p tsconfig.json --skipLibCheck --noEmit\",\n    \"test\": \"npm run lint && npm run types && npm run jest && npm run stryker\",\n    \"stryker\": \"stryker run\",\n    \"build\": \"tsc -p tsconfig.production.json --declaration\",\n    \"prepublishOnly\": \"npm run test && npm run build && esdoc\",\n    \"jest\": \"jest\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/honzamac/winston-influx.git\"\n  },\n  \"author\": \"HonzaMac,Scriptinator\",\n  \"license\": \"Apache-2.0\",\n  \"bugs\": {\n    \"url\": \"https://github.com/honzamac/winston-influx/issues\"\n  },\n  \"engines\": {\n    \"node\": \">=10\"\n  },\n  \"homepage\": \"https://github.com/honzamac/winston-influx#readme\",\n  \"dependencies\": {\n    \"influx\": \"^5.7.0\",\n    \"winston-transport\": \"^4.4.0\"\n  },\n  \"devDependencies\": {\n    \"@stryker-mutator/core\": \"^4.4.1\",\n    \"@stryker-mutator/jest-runner\": \"^4.4.1\",\n    \"@types/jest\": \"^26.0.20\",\n    \"@types/node\": \"^14.14.31\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-ecmascript-proposal-plugin\": \"^1.0.0\",\n    \"esdoc-node\": \"^1.0.5\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"esdoc-typescript-plugin\": \"^1.0.1\",\n    \"eslint\": \"^7.21.0\",\n    \"eslint-plugin-jest\": \"^24.1.7\",\n    \"jest\": \"^26.6.3\",\n    \"logform\": \"^2.2.0\",\n    \"stryker-cli\": \"^1.0.0\",\n    \"ts-jest\": \"^26.5.3\",\n    \"typescript\": \"^4.2.3\"\n  },\n  \"jest\": {\n    \"preset\": \"ts-jest\",\n    \"clearMocks\": true,\n    \"coverageDirectory\": \"coverage\",\n    \"coverageProvider\": \"v8\",\n    \"testEnvironment\": \"node\",\n    \"testMatch\": [\n      \"__tests__/**/*.[jt]s?(x)\",\n      \"**/?(*.)+(spec|test).[tj]s?(x)\"\n    ],\n    \"coverageReporters\": [\n      \"text\",\n      \"html\",\n      \"cobertura\"\n    ]\n  }\n}\n",
     "longname": "/Users/machalaj/projects/winston-influx/package.json",
     "name": "package.json",
     "static": true,

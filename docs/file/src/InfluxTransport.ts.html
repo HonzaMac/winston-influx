@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl">
-  <title data-ice="title">Home | @honzamac/winston-influx</title>
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/InfluxTransport.ts | @honzamac/winston-influx</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -38,57 +38,39 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="influxdb-transport">InfluxDB Transport</h1><p><a href="https://honzamac.github.io/winston-influx/"><img src="./docs/badge.svg" alt="Documentation"></a> </p>
-<p>This package is used by Scriptinator&apos;s services to aggregate logging and other measurements. We use InfluxDB as our
-time-series database of choice.</p>
-<h2 id="collecting-metrics">Collecting Metrics</h2><p>You can use the global writer to collect your metrics</p>
-<pre><code class="lang-javascript"><code class="source-code prettyprint">const {connect, writePoint} = require(&apos;@honzamac/winston-influx&apos;);
-
-// Connect to the database
-connect({ 
-    host: &apos;localhost&apos;,
-    database: &apos;my_metrics_database&apos;,
-    interval: 10 // Flush every 10 seconds
-});
+<div class="content" data-ice="content"><h1 data-ice="title">src/InfluxTransport.ts</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Transport from &quot;winston-transport&quot;
+import { writePoint } from &quot;./global&quot;
+import InfluxWriter from &quot;./InfluxWriter&quot;
 
 
-// Write metrics
-writePoint(
-    // measurement name
-    &apos;request&apos;,
-    // tags
-    {
-        method: &apos;GET&apos;,
-        service: &apos;api-gateway&apos;
-    },
-    // fields
-    {
-        responseTime: 15
+export default class InfluxTransport extends Transport {
+    private readonly _writeFn: any
+    constructor(writer: InfluxWriter) {
+        super();
+        this._writeFn = writer ? writer.writePoint.bind(writer) : writePoint;
     }
-);
-</code>
-</code></pre>
-<p>Optionally, you can use a local <code>InfluxWriter</code> and not expose the connection to the entire application:</p>
-<pre><code class="lang-javascript"><code class="source-code prettyprint">const {InfluxWriter} = require(&apos;@honzamac/winston-influx&apos;);
 
-let writer = new InfluxWriter({ 
-  host: &apos;localhost&apos;,
-  database: &apos;my_metrics_database&apos;,
-  interval: 10
-});
+    log(info: any, next: () =&gt; void) {
+        setImmediate(() =&gt; {
+            this.emit(&apos;logged&apos;, info);
+        });
 
-writer.writePoint(
-    &apos;request&apos;,
-    {
-        method: &apos;GET&apos;,
-        service: &apos;api-gateway&apos;
-    },
-    {
-        responseTime: 15
-    }   
-);</code>
+        this._writeFn(
+            &apos;log&apos;,
+            {
+                level: info.level
+            },
+            {
+                message: info.message,
+            }
+        );
+
+        next();
+    }
+}
 </code></pre>
-</div>
+
 </div>
 
 <footer class="footer">
