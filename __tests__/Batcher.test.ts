@@ -1,4 +1,5 @@
-const {Batcher: BatcherTest} = require('../src');
+import Batcher from "../src/Batcher"
+
 
 jest.useFakeTimers();
 
@@ -7,7 +8,7 @@ describe('batcher', () => {
 
     it('sends a batch when the max size is reached', () => {
         expect.assertions(2);
-        let batcher = new BatcherTest({
+        let batcher = new Batcher({
             batchSize: 5
         });
         let flushed = false;
@@ -25,7 +26,7 @@ describe('batcher', () => {
 
     it('sends a batch when the interval has passed', async () => {
         expect.assertions(2);
-        let batcher = new BatcherTest({
+        let batcher = new Batcher({
             interval: 1
         });
 

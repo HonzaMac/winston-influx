@@ -1,13 +1,16 @@
-const {writePoint} = require('./global');
-const Transport = require('winston-transport');
+import Transport from "winston-transport"
+import { writePoint } from "./global"
+import InfluxWriter from "./InfluxWriter"
 
-module.exports = class InfluxTransport extends Transport {
-    constructor(writer) {
+
+export default class InfluxTransport extends Transport {
+    private readonly _writeFn: any
+    constructor(writer: InfluxWriter) {
         super();
         this._writeFn = writer ? writer.writePoint.bind(writer) : writePoint;
     }
 
-    log(info, callback) {
+    log(info: any, next: () => void) {
         setImmediate(() => {
             this.emit('logged', info);
         });
@@ -22,6 +25,6 @@ module.exports = class InfluxTransport extends Transport {
             }
         );
 
-        callback();
+        next();
     }
-};
+}

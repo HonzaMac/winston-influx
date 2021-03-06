@@ -1,12 +1,12 @@
-const {EventEmitter} = require('events');
+import EventEmitter from "events"
 
-/**
- * @typedef {Object} IBatcherOptions
- * @property {Number} [interval=10] The flush interval in seconds. If you set this value then the batch will be flushed
- *      on a regular interval
- * @property {Number} [batchSize=5000] The maximum batch size. If the batch has reached this size it will be flushed.
- *      If you have set an 'interval' and this interval has not yet been reached, the batch is flushed anyway.
- */
+export interface IBatcherOptions {
+    /** @type number [interval=10] The flush interval in seconds. If you set this value then the batch will be flushed on a regular interval */
+    interval?: number;
+    /** @type {number} [batchSize=5000] The maximum batch size. If the batch has reached this size it will be flushed.
+     * If you have set an 'interval' and this interval has not yet been reached, the batch is flushed anyway. */
+    batchSize?: number;
+}
 
 /**
  * Batcher provides a way to batch a lot of inputs into groups. It has two mechanisms to do this.
@@ -14,7 +14,6 @@ const {EventEmitter} = require('events');
  * has reached this size it will flush the batch.
  * The second option is to set the 'interval' option. If this option is set the batch will be flushed when either
  * maximum batch size is reached or the interval has passed.
- * @type {module.Batcher}
  * @example
  * const {Batcher} = require('@honzamac/winston-influx');
  *
@@ -29,42 +28,42 @@ const {EventEmitter} = require('events');
  *   batch.write(i);
  * }
  */
-module.exports = class Batcher extends EventEmitter {
+export default class Batcher extends EventEmitter {
+    private batchSize = 5000
+    private timeInterval = 0
+    private _batch: any[] = []
+    private _interval?: NodeJS.Timeout
+
     /**
      * Create a new Batcher and, if the 'interval' option is supplied, start the interval timer.
      * @param {IBatcherOptions} [options={batchSize: 5000, interval: 0}]
      */
-    constructor(options = {}) {
+    constructor(options: IBatcherOptions) {
         super();
-        /**
-         * @type {IBatcherOptions}
-         * @private
-         */
-        this._options = {batchSize: 5000, interval: 0, ...options};
+
+        if (options.batchSize) {
+            this.batchSize = options.batchSize || 5000
+        }
 
         if (options.interval) {
+            this.timeInterval = options.interval || 0
             /**
              * If the interval options is set, this contains a reference for the set interval
              * @type {number}
              * @private
              */
-            this._interval = setInterval(() => this.flush(), options.interval);
+            this._interval = setInterval(() => this.flush(), this.timeInterval);
         }
-        /**
-         * @type {Array}
-         * @private
-         */
-        this._batch = [];
     }
 
     /**
      * Write an item to the batch.
      * @param {*} item
      */
-    write(item) {
+    write(item: any) {
         this._batch.push(item);
         this.emit('write', item);
-        if (this._batch.length >= this._options.batchSize) {
+        if (this._batch.length >= this.batchSize) {
             this.flush();
         }
     }
@@ -87,4 +86,4 @@ module.exports = class Batcher extends EventEmitter {
             clearInterval(this._interval);
         }
     }
-};
+}
