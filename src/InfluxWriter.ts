@@ -1,7 +1,7 @@
-import os from "os"
-import { IClusterConfig, InfluxDB, ISingleHostConfig, toNanoDate } from "influx"
+import os from 'os'
+import { IClusterConfig, InfluxDB, IPoint, ISingleHostConfig, toNanoDate } from 'influx'
 
-import Batcher, { IBatcherOptions } from "./Batcher"
+import Batcher, { IBatcherOptions } from './Batcher'
 
 
 type InfluxDbOptions = ISingleHostConfig | IClusterConfig
@@ -25,13 +25,13 @@ export default class InfluxWriter {
         /**
          * @type {InfluxDB}
          */
-        this._influx = new InfluxDB(options);
+        this._influx = new InfluxDB(options)
         /**
          * @type {module.Batcher}
          * @private
          */
-        this._batcher = new Batcher(options);
-        this._batcher.on('flush', (batch: any[]) => this._flushBatch(batch));
+        this._batcher = new Batcher(options)
+        this._batcher.on('flush', (batch: IPoint[]) => this._flushBatch(batch))
         /**
          * Influx will overwrite points using the same timestamp and tags.
          * To work around this we use this _counter field as the nanosecond
@@ -41,12 +41,12 @@ export default class InfluxWriter {
          * @type {number}
          * @private
          */
-        this._counter = 0;
+        this._counter = 0
         /**
          * @type {Object<String, String>}
          * @private
          */
-        this._tags = options.tags || {};
+        this._tags = options.tags || {}
     }
 
     /**
@@ -58,8 +58,8 @@ export default class InfluxWriter {
      * @param {Object.<String, *>} fields The list of field values to insert.
      * @param {Date} [time=new Date()] The time for the measurement.
      */
-    writePoint(measurement: string, tags: Record<string, string>, fields: Record<string, any>, time = new Date()) {
-        this._counter = (this._counter + 1) % 1000;
+    writePoint(measurement: string, tags: Record<string, string>, fields: Record<string, unknown>, time = new Date()): void {
+        this._counter = (this._counter + 1) % 1000
 
         this._batcher.write({
             measurement: measurement,
@@ -68,7 +68,7 @@ export default class InfluxWriter {
             timestamp: toNanoDate(
                 time.getTime() + '000' + this._counter.toString().padStart(3, '0')
             )
-        });
+        })
     }
 
     /**
@@ -76,11 +76,11 @@ export default class InfluxWriter {
      * @param batch
      * @private
      */
-    async _flushBatch(batch: any[]) {
+    async _flushBatch(batch: IPoint[]): Promise<void> {
         try {
             await this._influx.writePoints(batch, {precision: 'n'})
         } catch(err) {
-            console.error(`Failed to write batch to influx: ${err}`);
+            console.error(`Failed to write batch to influx: ${err}`)
         }
     }
 }

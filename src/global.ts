@@ -1,13 +1,13 @@
-import InfluxWriter, { InfluxWriteOptions } from "./InfluxWriter"
+import InfluxWriter, { InfluxWriteOptions } from './InfluxWriter'
 
-let globalWriter: InfluxWriter;
+let globalWriter: InfluxWriter
 
-export const connect = function (options: InfluxWriteOptions) {
-    globalWriter = new InfluxWriter(options);
+export const connect = function (options: InfluxWriteOptions): void {
+    globalWriter = new InfluxWriter(options)
 }
 
-export const writePoint = function (measurement: string, tags: Record<string, string>, fields: Record<string, any>, time = new Date()) {
+export const writePoint = function (measurement: string, tags: Record<string, string>, fields: Record<string, unknown>, time: Date = new Date()): void {
     if (globalWriter) {
-        globalWriter.writePoint(measurement, tags, fields, time);
+        globalWriter.writePoint(measurement, tags, fields, time)
     }
 }

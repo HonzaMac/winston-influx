@@ -1,4 +1,4 @@
-import EventEmitter from "events"
+import EventEmitter from 'events'
 
 export interface IBatcherOptions {
     /** @type number [interval=10] The flush interval in seconds. If you set this value then the batch will be flushed on a regular interval */
@@ -31,15 +31,18 @@ export interface IBatcherOptions {
 export default class Batcher extends EventEmitter {
     private batchSize = 5000
     private timeInterval = 0
-    private _batch: any[] = []
+    private _batch: unknown[] = []
     private _interval?: NodeJS.Timeout
 
     /**
+     *
+     *
+     *
      * Create a new Batcher and, if the 'interval' option is supplied, start the interval timer.
      * @param {IBatcherOptions} [options={batchSize: 5000, interval: 0}]
      */
     constructor(options: IBatcherOptions) {
-        super();
+        super()
 
         if (options.batchSize) {
             this.batchSize = options.batchSize || 5000
@@ -52,7 +55,7 @@ export default class Batcher extends EventEmitter {
              * @type {number}
              * @private
              */
-            this._interval = setInterval(() => this.flush(), this.timeInterval);
+            this._interval = setInterval(() => this.flush(), this.timeInterval)
         }
     }
 
@@ -60,30 +63,30 @@ export default class Batcher extends EventEmitter {
      * Write an item to the batch.
      * @param {*} item
      */
-    write(item: any) {
-        this._batch.push(item);
-        this.emit('write', item);
+    write(item: unknown): void {
+        this._batch.push(item)
+        this.emit('write', item)
         if (this._batch.length >= this.batchSize) {
-            this.flush();
+            this.flush()
         }
     }
 
     /**
      * Flush the current batch. If the batch is empty, this method does nothing.
      */
-    flush() {
+    flush(): void {
         if (this._batch.length > 0) {
-            this.emit('flush', this._batch);
-            this._batch = [];
+            this.emit('flush', this._batch)
+            this._batch = []
         }
     }
 
     /**
      * Stop the interval timer.
      */
-    close() {
+    close() : void {
         if (this._interval) {
-            clearInterval(this._interval);
+            clearInterval(this._interval)
         }
     }
 }

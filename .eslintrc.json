@@ -1,10 +1,12 @@
 {
   "plugins": [
-    "jest"
+    "jest",
+    "@typescript-eslint"
   ],
   "extends": [
     "eslint:recommended",
-    "plugin:jest/all"
+    "plugin:jest/all",
+    "plugin:@typescript-eslint/recommended"
   ],
   "env": {
     "jest/globals": true,
@@ -15,6 +17,7 @@
     "sourceType": "module",
     "ecmaVersion": 2018
   },
+  "parser": "@typescript-eslint/parser",
   "rules": {
     "jest/prefer-expect-assertions": [
       "warn",
@@ -24,9 +27,10 @@
       "error",
       "single"
     ],
+    "no-extra-semi": "error",
     "semi": [
       "error",
-      "always"
+      "never"
     ],
     "no-console": "off"
   }
