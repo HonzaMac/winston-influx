@@ -10,3 +10,7 @@ lib/
 coverage/
 .nyc_output/
 test-results.xml
+
+
+### npm publish
+package-lock.json
