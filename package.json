@@ -17,7 +17,7 @@
     "test": "npm run lint && npm run types && npm run jest && npm run stryker && npm run build && esdoc",
     "stryker": "./node_modules/.bin/stryker run",
     "build": "tsc -p tsconfig.production.json --declaration",
-    "prepublishOnly": "npm run test && npm run build && esdoc",
+    "prepublishOnly": "npm run build && esdoc",
     "jest": "jest"
   },
   "repository": {
