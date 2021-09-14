@@ -6,6 +6,7 @@ node_js:
 - 13
 - 14
 - 15
+- 16
 deploy:
   provider: npm
   email: honza.machala@seznam.cz
