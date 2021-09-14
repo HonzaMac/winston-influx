@@ -13,10 +13,10 @@
 
 <header>
   <a href="./">Home</a>
-  
+
   <a href="identifiers.html">Reference</a>
   <a href="source.html">Source</a>
-  
+
   <div class="search-box">
   <span>
     <img src="./image/search.png">
@@ -28,7 +28,7 @@
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
-    
+
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Batcher.ts~Batcher.html">Batcher</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/InfluxTransport.ts~InfluxTransport.html">InfluxTransport</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/InfluxWriter.ts~InfluxWriter.html">InfluxWriter</a></span></span></li>
@@ -39,22 +39,23 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/InfluxTransport.ts</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Transport from &quot;winston-transport&quot;
-import { writePoint } from &quot;./global&quot;
-import InfluxWriter from &quot;./InfluxWriter&quot;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import Transport from &apos;winston-transport&apos;
+import { writePoint } from &apos;./global&apos;
+import InfluxWriter from &apos;./InfluxWriter&apos;
+import { TransformableInfo } from &apos;logform&apos;
 
 
 export default class InfluxTransport extends Transport {
-    private readonly _writeFn: any
+    private readonly _writeFn: (measurement: string, tags: Record&lt;string, string&gt; , fields: Record&lt;string, unknown&gt; , time?: Date) =&gt; void
     constructor(writer: InfluxWriter) {
-        super();
-        this._writeFn = writer ? writer.writePoint.bind(writer) : writePoint;
+        super()
+        this._writeFn = writer ? writer.writePoint.bind(writer) : writePoint
     }
 
-    log(info: any, next: () =&gt; void) {
+    log(info: TransformableInfo, next: () =&gt; void): void {
         setImmediate(() =&gt; {
-            this.emit(&apos;logged&apos;, info);
-        });
+            this.emit(&apos;logged&apos;, info)
+        })
 
         this._writeFn(
             &apos;log&apos;,
@@ -64,9 +65,9 @@ export default class InfluxTransport extends Transport {
             {
                 message: info.message,
             }
-        );
+        )
 
-        next();
+        next()
     }
 }
 </code></pre>

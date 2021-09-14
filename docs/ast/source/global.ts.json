@@ -92,7 +92,7 @@
           },
           "extra": {
             "rawValue": "./InfluxWriter",
-            "raw": "\"./InfluxWriter\""
+            "raw": "'./InfluxWriter'"
           },
           "value": "./InfluxWriter"
         }

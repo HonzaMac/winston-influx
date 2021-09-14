@@ -13,10 +13,10 @@
 
 <header>
   <a href="./">Home</a>
-  
+
   <a href="identifiers.html">Reference</a>
   <a href="source.html">Source</a>
-  
+
   <div class="search-box">
   <span>
     <img src="./image/search.png">
@@ -28,7 +28,7 @@
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
-    
+
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Batcher.ts~Batcher.html">Batcher</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/InfluxTransport.ts~InfluxTransport.html">InfluxTransport</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/InfluxWriter.ts~InfluxWriter.html">InfluxWriter</a></span></span></li>
@@ -39,17 +39,17 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/global.ts</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import InfluxWriter, { InfluxWriteOptions } from &quot;./InfluxWriter&quot;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import InfluxWriter, { InfluxWriteOptions } from &apos;./InfluxWriter&apos;
 
-let globalWriter: InfluxWriter;
+let globalWriter: InfluxWriter
 
-export const connect = function (options: InfluxWriteOptions) {
-    globalWriter = new InfluxWriter(options);
+export const connect = function (options: InfluxWriteOptions): void {
+    globalWriter = new InfluxWriter(options)
 }
 
-export const writePoint = function (measurement: string, tags: Record&lt;string, string&gt;, fields: Record&lt;string, any&gt;, time = new Date()) {
+export const writePoint = function (measurement: string, tags: Record&lt;string, string&gt;, fields: Record&lt;string, unknown&gt;, time: Date = new Date()): void {
     if (globalWriter) {
-        globalWriter.writePoint(measurement, tags, fields, time);
+        globalWriter.writePoint(measurement, tags, fields, time)
     }
 }
 </code></pre>

@@ -158,7 +158,7 @@
           },
           "extra": {
             "rawValue": "./global",
-            "raw": "\"./global\""
+            "raw": "'./global'"
           },
           "value": "./global"
         }
@@ -227,7 +227,7 @@
           },
           "extra": {
             "rawValue": "./InfluxTransport",
-            "raw": "\"./InfluxTransport\""
+            "raw": "'./InfluxTransport'"
           },
           "value": "./InfluxTransport"
         }
@@ -296,7 +296,7 @@
           },
           "extra": {
             "rawValue": "./Batcher",
-            "raw": "\"./Batcher\""
+            "raw": "'./Batcher'"
           },
           "value": "./Batcher"
         }
@@ -365,7 +365,7 @@
           },
           "extra": {
             "rawValue": "./InfluxWriter",
-            "raw": "\"./InfluxWriter\""
+            "raw": "'./InfluxWriter'"
           },
           "value": "./InfluxWriter"
         }
