@@ -1,6 +1,6 @@
 {
   "name": "@honzamac/winston-influx",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "",
   "main": "dist/index.js",
   "files": [
@@ -29,7 +29,7 @@
     "url": "https://github.com/honzamac/winston-influx/issues"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "homepage": "https://github.com/honzamac/winston-influx#readme",
   "dependencies": {

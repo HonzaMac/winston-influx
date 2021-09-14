@@ -6,6 +6,5 @@
     "clear-text",
     "progress"
   ],
-  "testRunner": "jest",
-  "coverageAnalysis": "perTest"
+  "testRunner": "jest"
 }

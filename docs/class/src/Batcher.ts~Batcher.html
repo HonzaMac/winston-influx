@@ -13,10 +13,10 @@
 
 <header>
   <a href="./">Home</a>
-  
+
   <a href="identifiers.html">Reference</a>
   <a href="source.html">Source</a>
-  
+
   <div class="search-box">
   <span>
     <img src="./image/search.png">
@@ -28,7 +28,7 @@
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
-    
+
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/Batcher.ts~Batcher.html">Batcher</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/InfluxTransport.ts~InfluxTransport.html">InfluxTransport</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/InfluxWriter.ts~InfluxWriter.html">InfluxWriter</a></span></span></li>
@@ -42,44 +42,44 @@
   <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Batcher from &apos;<span><a href="file/src/Batcher.ts.html#lineNumber31">@honzamac/winston-influx/src/Batcher.ts</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
-  
-  
-  
+
+
+
   <span data-ice="source">| <span><a href="file/src/Batcher.ts.html#lineNumber31">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
   <h1 data-ice="name">Batcher</h1>
 
-  
 
-  
-  
+
+
+
   <div class="flat-list" data-ice="extendsChain"><h4>Extends:</h4><div><span>events~EventEmitter</span> &#x2192; Batcher</div></div>
-  
-  
-  
-  
-  
-  
 
-  
-  
+
+
+
+
+
+
+
+
   <div class="description" data-ice="description"><p>Batcher provides a way to batch a lot of inputs into groups. It has two mechanisms to do this.
 The first mechanism is to set the &apos;batchSize&apos; option to the maximum desired size of a single batch. When the buffer
 has reached this size it will flush the batch.
 The second option is to set the &apos;interval&apos; option. If this option is set the batch will be flushed when either
 maximum batch size is reached or the interval has passed.</p>
 </div>
-  
 
-  
 
-  
 
-  
 
-  
+
+
+
+
+
 </div>
 
 
@@ -87,34 +87,33 @@ maximum batch size is reached or the interval has passed.</p>
 <div data-ice="constructorSummary"><h2>Constructor Summary</h2><table class="summary" data-ice="summary">
   <thead><tr><td data-ice="title" colspan="3">Public Constructor</td></tr></thead>
   <tbody>
-  
+
   <tr data-ice="target">
     <td>
       <span class="access" data-ice="access">public</span>
-      
-      
-      
+
+
+
       <span class="override" data-ice="override"></span>
     </td>
     <td>
       <div>
         <p>
-          
-          
-          
+
+
+
           <span class="code" data-ice="name"><span><a href="class/src/Batcher.ts~Batcher.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">(options: <span>IBatcherOptions</span>)</span>
         </p>
       </div>
       <div>
-        
-        
-        <div data-ice="description"><p>Create a new Batcher and, if the &apos;interval&apos; option is supplied, start the interval timer.</p>
-</div>
+
+
+
       </div>
     </td>
     <td>
-      
-      
+
+
     </td>
   </tr>
 </tbody>
@@ -123,61 +122,61 @@ maximum batch size is reached or the interval has passed.</p>
 <div data-ice="memberSummary"><h2>Member Summary</h2><table class="summary" data-ice="summary">
   <thead><tr><td data-ice="title" colspan="3">Public Members</td></tr></thead>
   <tbody>
-  
+
   <tr data-ice="target">
     <td>
       <span class="access" data-ice="access">public</span>
-      
-      
-      
+
+
+
       <span class="override" data-ice="override"></span>
     </td>
     <td>
       <div>
         <p>
-          
-          
-          
+
+
+
           <span class="code" data-ice="name"><span><a href="class/src/Batcher.ts~Batcher.html#instance-member-batchSize">batchSize</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
         </p>
       </div>
       <div>
-        
-        
-        
+
+
+
       </div>
     </td>
     <td>
-      
-      
+
+
     </td>
   </tr>
 <tr data-ice="target">
     <td>
       <span class="access" data-ice="access">public</span>
-      
-      
-      
+
+
+
       <span class="override" data-ice="override"></span>
     </td>
     <td>
       <div>
         <p>
-          
-          
-          
+
+
+
           <span class="code" data-ice="name"><span><a href="class/src/Batcher.ts~Batcher.html#instance-member-timeInterval">timeInterval</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
         </p>
       </div>
       <div>
-        
-        
-        
+
+
+
       </div>
     </td>
     <td>
-      
-      
+
+
     </td>
   </tr>
 </tbody>
@@ -185,62 +184,62 @@ maximum batch size is reached or the interval has passed.</p>
 <table class="summary" data-ice="summary">
   <thead><tr><td data-ice="title" colspan="3">Private Members</td></tr></thead>
   <tbody>
-  
+
   <tr data-ice="target">
     <td>
       <span class="access" data-ice="access">private</span>
-      
-      
-      
+
+
+
       <span class="override" data-ice="override"></span>
     </td>
     <td>
       <div>
         <p>
-          
-          
-          
+
+
+
           <span class="code" data-ice="name"><span><a href="class/src/Batcher.ts~Batcher.html#instance-member-_batch">_batch</a></span></span><span class="code" data-ice="signature">: <span><span>*</span><span>[]</span></span></span>
         </p>
       </div>
       <div>
-        
-        
-        
+
+
+
       </div>
     </td>
     <td>
-      
-      
+
+
     </td>
   </tr>
 <tr data-ice="target">
     <td>
       <span class="access" data-ice="access">private</span>
-      
-      
-      
+
+
+
       <span class="override" data-ice="override"></span>
     </td>
     <td>
       <div>
         <p>
-          
-          
-          
+
+
+
           <span class="code" data-ice="name"><span><a href="class/src/Batcher.ts~Batcher.html#instance-member-_interval">_interval</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
         </p>
       </div>
       <div>
-        
-        
+
+
         <div data-ice="description"><p>If the interval options is set, this contains a reference for the set interval</p>
 </div>
       </div>
     </td>
     <td>
-      
-      
+
+
     </td>
   </tr>
 </tbody>
@@ -249,92 +248,92 @@ maximum batch size is reached or the interval has passed.</p>
 <div data-ice="methodSummary"><h2>Method Summary</h2><table class="summary" data-ice="summary">
   <thead><tr><td data-ice="title" colspan="3">Public Methods</td></tr></thead>
   <tbody>
-  
+
   <tr data-ice="target">
     <td>
       <span class="access" data-ice="access">public</span>
-      
-      
-      
+
+
+
       <span class="override" data-ice="override"></span>
     </td>
     <td>
       <div>
         <p>
-          
-          
-          
+
+
+
           <span class="code" data-ice="name"><span><a href="class/src/Batcher.ts~Batcher.html#instance-method-close">close</a></span></span><span class="code" data-ice="signature">()</span>
         </p>
       </div>
       <div>
-        
-        
+
+
         <div data-ice="description"><p>Stop the interval timer.</p>
 </div>
       </div>
     </td>
     <td>
-      
-      
+
+
     </td>
   </tr>
 <tr data-ice="target">
     <td>
       <span class="access" data-ice="access">public</span>
-      
-      
-      
+
+
+
       <span class="override" data-ice="override"></span>
     </td>
     <td>
       <div>
         <p>
-          
-          
-          
+
+
+
           <span class="code" data-ice="name"><span><a href="class/src/Batcher.ts~Batcher.html#instance-method-flush">flush</a></span></span><span class="code" data-ice="signature">()</span>
         </p>
       </div>
       <div>
-        
-        
+
+
         <div data-ice="description"><p>Flush the current batch.</p>
 </div>
       </div>
     </td>
     <td>
-      
-      
+
+
     </td>
   </tr>
 <tr data-ice="target">
     <td>
       <span class="access" data-ice="access">public</span>
-      
-      
-      
+
+
+
       <span class="override" data-ice="override"></span>
     </td>
     <td>
       <div>
         <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/src/Batcher.ts~Batcher.html#instance-method-write">write</a></span></span><span class="code" data-ice="signature">(item: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span>)</span>
+
+
+
+          <span class="code" data-ice="name"><span><a href="class/src/Batcher.ts~Batcher.html#instance-method-write">write</a></span></span><span class="code" data-ice="signature">(item: <span>unknown</span>)</span>
         </p>
       </div>
       <div>
-        
-        
+
+
         <div data-ice="description"><p>Write an item to the batch.</p>
 </div>
       </div>
     </td>
     <td>
-      
-      
+
+
     </td>
   </tr>
 </tbody>
@@ -350,26 +349,26 @@ maximum batch size is reached or the interval has passed.</p>
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-constructor-constructor">
     <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
+
+
+
+
+
     <span class="code" data-ice="name">constructor</span><span class="code" data-ice="signature">(options: <span>IBatcherOptions</span>)</span>
     <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/Batcher.ts.html#lineNumber17">source</a></span></span>
+
+
+      <span data-ice="source"><span><a href="file/src/Batcher.ts.html#lineNumber20">source</a></span></span>
     </span>
   </h3>
 
-  
-  
-  
+
+
+
   <div data-ice="description"><p>Create a new Batcher and, if the &apos;interval&apos; option is supplied, start the interval timer.</p>
 </div>
 
-  
+
 
   <div data-ice="properties"><div data-ice="properties">
   <h4 data-ice="title">Params:</h4>
@@ -378,7 +377,7 @@ maximum batch size is reached or the interval has passed.</p>
     <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
     </thead>
     <tbody>
-    
+
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">options</td>
       <td data-ice="type" class="code"><span>IBatcherOptions</span></td>
@@ -391,22 +390,22 @@ maximum batch size is reached or the interval has passed.</p>
 </div>
 </div>
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
-  
+
+
+
+
+
+
+
+
+
 </div>
 </div>
 <div data-ice="memberDetails"><h2 data-ice="title">Public Members</h2>
@@ -414,177 +413,177 @@ maximum batch size is reached or the interval has passed.</p>
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-member-batchSize">
     <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
+
+
+
+
+
     <span class="code" data-ice="name">batchSize</span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
     <span class="right-info">
-      
-      
+
+
       <span data-ice="source"><span><a href="file/src/Batcher.ts.html#lineNumber32">source</a></span></span>
     </span>
   </h3>
 
-  
-  
-  
-  
 
-  
+
+
+
+
+
 
   <div data-ice="properties">
 </div>
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
-  
+
+
+
+
+
+
+
+
+
 </div>
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-member-timeInterval">
     <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
+
+
+
+
+
     <span class="code" data-ice="name">timeInterval</span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
     <span class="right-info">
-      
-      
+
+
       <span data-ice="source"><span><a href="file/src/Batcher.ts.html#lineNumber33">source</a></span></span>
     </span>
   </h3>
 
-  
-  
-  
-  
 
-  
+
+
+
+
+
 
   <div data-ice="properties">
 </div>
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
-  
+
+
+
+
+
+
+
+
+
 </div>
 <h2 data-ice="title">Private Members</h2>
 
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-member-_batch">
     <span class="access" data-ice="access">private</span>
-    
-    
-    
-    
-    
+
+
+
+
+
     <span class="code" data-ice="name">_batch</span><span class="code" data-ice="signature">: <span><span>*</span><span>[]</span></span></span>
     <span class="right-info">
-      
-      
+
+
       <span data-ice="source"><span><a href="file/src/Batcher.ts.html#lineNumber34">source</a></span></span>
     </span>
   </h3>
 
-  
-  
-  
-  
 
-  
+
+
+
+
+
 
   <div data-ice="properties">
 </div>
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
-  
+
+
+
+
+
+
+
+
+
 </div>
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-member-_interval">
     <span class="access" data-ice="access">private</span>
-    
-    
-    
-    
-    
+
+
+
+
+
     <span class="code" data-ice="name">_interval</span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></span>
     <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/Batcher.ts.html#lineNumber50">source</a></span></span>
+
+
+      <span data-ice="source"><span><a href="file/src/Batcher.ts.html#lineNumber53">source</a></span></span>
     </span>
   </h3>
 
-  
-  
-  
+
+
+
   <div data-ice="description"><p>If the interval options is set, this contains a reference for the set interval</p>
 </div>
 
-  
+
 
   <div data-ice="properties">
 </div>
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
-  
+
+
+
+
+
+
+
+
+
 </div>
 </div>
 <div data-ice="methodDetails"><h2 data-ice="title">Public Methods</h2>
@@ -592,114 +591,114 @@ maximum batch size is reached or the interval has passed.</p>
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-close">
     <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
+
+
+
+
+
     <span class="code" data-ice="name">close</span><span class="code" data-ice="signature">()</span>
     <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/Batcher.ts.html#lineNumber84">source</a></span></span>
+
+
+      <span data-ice="source"><span><a href="file/src/Batcher.ts.html#lineNumber87">source</a></span></span>
     </span>
   </h3>
 
-  
-  
-  
+
+
+
   <div data-ice="description"><p>Stop the interval timer.</p>
 </div>
 
-  
+
 
   <div data-ice="properties">
 </div>
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
-  
+
+
+
+
+
+
+
+
+
 </div>
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-flush">
     <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
+
+
+
+
+
     <span class="code" data-ice="name">flush</span><span class="code" data-ice="signature">()</span>
     <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/Batcher.ts.html#lineNumber74">source</a></span></span>
+
+
+      <span data-ice="source"><span><a href="file/src/Batcher.ts.html#lineNumber77">source</a></span></span>
     </span>
   </h3>
 
-  
-  
-  
+
+
+
   <div data-ice="description"><p>Flush the current batch. If the batch is empty, this method does nothing.</p>
 </div>
 
-  
+
 
   <div data-ice="properties">
 </div>
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
-  
+
+
+
+
+
+
+
+
+
 </div>
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-write">
     <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">write</span><span class="code" data-ice="signature">(item: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span>)</span>
+
+
+
+
+
+    <span class="code" data-ice="name">write</span><span class="code" data-ice="signature">(item: <span>unknown</span>)</span>
     <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/Batcher.ts.html#lineNumber63">source</a></span></span>
+
+
+      <span data-ice="source"><span><a href="file/src/Batcher.ts.html#lineNumber66">source</a></span></span>
     </span>
   </h3>
 
-  
-  
-  
+
+
+
   <div data-ice="description"><p>Write an item to the batch.</p>
 </div>
 
-  
+
 
   <div data-ice="properties"><div data-ice="properties">
   <h4 data-ice="title">Params:</h4>
@@ -708,10 +707,10 @@ maximum batch size is reached or the interval has passed.</p>
     <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
     </thead>
     <tbody>
-    
+
     <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">item</td>
-      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a></span></td>
+      <td data-ice="type" class="code"><span>unknown</span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"></td>
     </tr>
@@ -720,22 +719,22 @@ maximum batch size is reached or the interval has passed.</p>
 </div>
 </div>
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
 
-  
-  
+
+
+
+
+
+
+
+
+
 </div>
 </div>
 </div>
