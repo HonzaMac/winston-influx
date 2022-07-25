@@ -41,7 +41,7 @@ export default class Batcher extends EventEmitter {
      * Create a new Batcher and, if the 'interval' option is supplied, start the interval timer.
      * @param {IBatcherOptions} [options={batchSize: 5000, interval: 0}]
      */
-    constructor(options: IBatcherOptions) {
+    constructor(options: IBatcherOptions = {} as IBatcherOptions) {
         super()
 
         if (options.batchSize) {
